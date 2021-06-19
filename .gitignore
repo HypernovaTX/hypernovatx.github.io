@@ -112,8 +112,8 @@ dist
 # testing
 /coverage
 
-# production
-/build
+# production (no need to gitignore this since this will be used for github pages)
+# /build
 
 # misc
 .DS_Store
