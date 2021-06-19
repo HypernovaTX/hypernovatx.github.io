@@ -1,3 +1,6 @@
+// Root SCSS (desktop)
+@import './_presets';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // Code block
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  nav {
+    top: 0px;
+    position: fixed;
+    right: 0px;
+    user-select: none;
+    
+    // Navigation bar items
+    span {
+      padding: 1rem 2rem;
+      display: inline-block;
+      cursor: pointer;
+      transition: $transition;
+      
+      @each $name, $bgc in $nav-item {
+        #{$name} { background: $bgc; }
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    background: $color-black;
+    display: grid;
+    color: $color-white2;
+
+    span {
+      margin: 1rem 2rem;
+      display: block;
+      
+    }
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+

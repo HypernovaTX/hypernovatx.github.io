@@ -1,10 +1,11 @@
 import React from 'react';
 import templateHome from './template/home';
+import '../resources/home.scss';
 
 type Props = {
 };
 type State = {
-    scroll: number;
+  scroll: number;
 };
 
 export default class Home extends React.Component<Props, State> {

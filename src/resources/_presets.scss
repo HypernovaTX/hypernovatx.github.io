@@ -1,0 +1,15 @@
+// Global presets
+$transition: 200ms linear all;
+
+// Colors
+$color-white: #EEE;
+$color-white2: #AAA;
+$color-black: #222;
+$color-accent: #20F;
+
+// Used for navigation menu entries
+$nav-item: (
+  "&": rgba(255, 255, 255, 0),
+  "&:hover": rgba(255, 255, 255, 0.4),
+  "&:active": rgba(255, 255, 255, 0.6),
+);
