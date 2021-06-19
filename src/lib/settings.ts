@@ -5,9 +5,14 @@ import { NavigationItem } from './types';
 
 // Global stuff
 export const siteName: string =                 'Arthur Guo \'s Website';
+export const siteRoot: string =                 'https://hypernovatx.github.io/personalwebsite';
 export const siteFooterText: string =           'Website designed by Arthur (Hypernova) Guo - 2021';
 export const siteNavigation: NavigationItem =   { list: [
-  ['Home', '/'], ['About Me', '/about'], ['Projects', '/projects'], ['Experiences', '/about'], ['Contact', '/contact']
+  ['Home', siteRoot + '/'],
+  ['About Me', siteRoot + '/about'],
+  ['Projects', siteRoot + '/projects'],
+  ['Experiences', siteRoot + '/about'],
+  ['Contact', siteRoot + '/contact']
 ] };
 
 // Home page

@@ -11,7 +11,7 @@ export default class TemplateHome {
           originalImg={'../../resources/img/mountain-base.jpg'}
           depthImg={'../../resources/img/mountain-mask.jpg'}
           verticalThreshold={25}
-          horizontalThreshold={25}
+          horizontalThreshold={5}
         />
         <h1>{ homeSettings.title }</h1>
         <button onClick={ () => { changeRoute(homeSettings.buttonUrl) } }>
