@@ -6,10 +6,14 @@ $color-white: #EEE;
 $color-white2: #AAA;
 $color-black: #222;
 $color-accent: #20F;
+$color-transparent: rgba(0, 0, 0, 0);
 
 // Used for navigation menu entries
 $nav-item: (
   "&": rgba(255, 255, 255, 0),
-  "&:hover": rgba(255, 255, 255, 0.4),
-  "&:active": rgba(255, 255, 255, 0.6),
+  "&:hover": rgba(255, 255, 255, 0.2),
+  "&:active": rgba(255, 255, 255, 0.4),
 );
+
+// Others
+%pseudo-block { content: ""; }

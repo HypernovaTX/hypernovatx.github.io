@@ -27,6 +27,11 @@ body {
       display: inline-block;
       cursor: pointer;
       transition: $transition;
+      color: #FFF;
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px #000;
       
       @each $name, $bgc in $nav-item {
         #{$name} { background: $bgc; }
@@ -40,6 +45,7 @@ body {
     display: grid;
     color: $color-white2;
 
+    // Footer text
     span {
       margin: 1rem 2rem;
       display: block;

@@ -5,3 +5,4 @@
 // Use: top side navigation menu items
 // { list: [string (name), string (url)][] }
 export interface NavigationItem { list: [string, string][] };
+export interface MouseXY { x: Number, y: Number };

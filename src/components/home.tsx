@@ -1,23 +1,11 @@
-import React from 'react';
 import templateHome from './template/home';
 import '../resources/home.scss';
+import useMousePosition from '../hooks/mouse';
 
-type Props = {
-};
-type State = {
-  scroll: number;
-};
-
-export default class Home extends React.Component<Props, State> {
-  constructor(p: Props) {
-    super(p);
-    this.state = { scroll: 0, }
-  }
-
-  render() {
-    const template = new templateHome()
-    return(
-      template.output()
-    );
-  }
+export default function Home() {
+  const mousePos = useMousePosition();
+  const template = new templateHome(mousePos);
+  return(
+    template.output()
+  );
 }
