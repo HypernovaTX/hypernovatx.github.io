@@ -1,6 +1,10 @@
 // Root SCSS (desktop)
 @import './_presets';
 
+:root {
+  --cloud-x-offset: 0px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -28,7 +32,7 @@ body {
       cursor: pointer;
       transition: $transition;
       color: #FFF;
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 300;
       text-transform: uppercase;
       text-shadow: 1px 1px 1px #000;
