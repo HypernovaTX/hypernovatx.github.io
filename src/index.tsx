@@ -13,8 +13,6 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/"><Home/></Route> {/* HOME */}
-      </Switch>
-      <Switch>
         <Route exact path="/about"><About/></Route> {/* HOME */}
       </Switch>
     </Router>
