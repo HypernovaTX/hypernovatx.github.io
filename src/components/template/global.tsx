@@ -22,9 +22,9 @@ export function navigation(): JSX.Element {
   return (
     <nav>
       <div className = { `top-wave ${topWaveName}` }>
-        <Wave paused = { false } options={{ height: 240, amplitude: 25, speed: 0.26, points: points + 2 }} />
-        <Wave paused = { false } options={{ height: 240, amplitude: 24, speed: 0.25, points: points }} />
-        <Wave paused = { false } options={{ height: 240, amplitude: 23, speed: 0.24, points: points - 2 }} />
+        <Wave paused = { false } options={{ height: 0, amplitude: 25, speed: 0.26, points: points + 2 }} />
+        <Wave paused = { false } options={{ height: 0, amplitude: 24, speed: 0.25, points: points }} />
+        <Wave paused = { false } options={{ height: 0, amplitude: 23, speed: 0.24, points: points - 2 }} />
       </div>
       { entries }
     </nav>

@@ -54,7 +54,7 @@ body {
       height: 30em;
       z-index: -1;
       transition: 500ms ease-out all;
-      transform: translateY(-280px) scaleY(-1);
+      transform: translateY(-500px) scaleY(-1);
 
       div {
         position: fixed;
@@ -63,13 +63,16 @@ body {
         height: 30em;
       }
 
-      path {
-        fill: $color-accent;
-        opacity: 0.5;
+      svg {
+        top: 0px;
+        path {
+          fill: $color-accent;
+          opacity: 0.5;
+        }
       }
 
       &.active {
-        transform: translateY(-160px) scaleY(-1);
+        transform: translateY(-400px) scaleY(-1);
       }
     }
     
