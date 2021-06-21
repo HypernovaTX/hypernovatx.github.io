@@ -10,15 +10,15 @@ export const siteFooterText =           'Website designed by Arthur (Hypernova) 
 export const siteNavigation =           { list: [
   ['Home', siteRoot + '/'],
   ['About Me', siteRoot + '/about'],
+  ['Experiences', siteRoot + '/experiences'],
   ['Projects', siteRoot + '/projects'],
-  ['Experiences', siteRoot + '/about'],
   ['Contact', siteRoot + '/contact']
 ] };
 
 // Home page
 //const cloudXcalc = (x: number) => (x * 12) - (Date.now() / 1000) % 2112;
 export const homeSettings = {
-  title:              'Hi! My name is Arthur (ChengAn) Guo! I am a developer!',
+  title:              'Hi! My name is Arthur Guo! I am a developer!',
   buttonText:         'Who I am exactly?',
   buttonUrl:          '/about',
   landerImg:          '/resources/img/mountain-base.jpg',
@@ -30,11 +30,11 @@ export const homeSettings = {
       },
       clouds: {
         backgroundPositionX: `calc(50% - ${ (m.x * 12) }px)`,
-        backgroundPositionY: `calc(50% - ${ (m.y * 12) }px)`,
+        backgroundPositionY: `calc(75% - ${ (m.y * 12) }px)`,
       },
       tree: {
-        backgroundPositionX: `calc(50% - ${ (m.x * 8) }px)`,
-        backgroundPositionY: `calc(85% - ${ (m.y * 8) }px)`,
+        backgroundPositionX: `calc(25% - ${ (m.x * 8) }px)`,
+        backgroundPositionY: `calc(110% - ${ (m.y * 8) }px)`,
       }
     }
   }

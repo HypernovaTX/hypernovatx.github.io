@@ -6,18 +6,41 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
   // Title text
   h1 {
     color: $color-white;
-    font-size: 2em;
+    font-size: 3em;
     text-shadow: 2px 2px 2px #000;
     font-weight: 300;
+    margin: 1em;
+  }
+
+  button {
+    margin: 0px 2em 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 4px solid $color-accent;
+    color: $color-accent;
+    padding: 1em 2em;
+    font-size: 1.5rem;
+    transition: 200ms linear all;
+    border-radius: 2em;
+    box-shadow: 0px 8px 4px -2px #000;
+
+    &.hidden { opacity: 0; }
+    &.active { opacity: 1; }
+
+    &:hover { background: rgba(255, 255, 255, 0.8); }
+    &:active {
+      margin: 4px 2em 0px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 4px 2px -1px #000;
+    }
   }
   
   // Background image part
-  div {
+  div:not(.Typewriter) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -30,24 +53,24 @@ section {
     // BG Image (purposely made this larget for parallax effects)
     .mountain {
       background: url('./img/mountain-base.jpg') no-repeat;
-      background-size: auto 150%;
+      background-size: auto 200%;
     }
     .clouds {
       background: url('./img/clouds.png') repeat-x;
-      background-size: auto 50%;
+      background-size: auto 100%;
     }
     .tree {
       background: url('./img/forest.png') repeat-x;
-      background-size: auto 25%;
+      background-size: auto 40%;
     }
     div {
       background-color: rgba(0, 0, 0, 0);
-      width: 150%;
-      height: 150%;
+      width: 100%;
+      height: 100%;
     }
 
-    $shade-cover: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 100%, rgba(0, 0, 0, 0.1) 100%);
-    $shade-top: linear-gradient(0deg, rgba(0, 168, 255, 0) 75%, rgba(10, 0, 73, 1) 100%);
+    $shade-cover: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 100%, rgba(0, 0, 0, 0.2) 100%);
+    $shade-top: linear-gradient(0deg, rgba(0, 168, 255, 0) 80%, rgba(10, 0, 73, 0.5) 100%);
 
     // Top gradient part
     &:after {

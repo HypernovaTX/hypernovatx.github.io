@@ -2,11 +2,19 @@ import { navigation, footer } from "./global";
 import { homeSettings } from '../../lib/settings';
 import { changeRoute } from '../../lib/actions';
 import { MouseXY } from "../../lib/types";
+import Typewriter from 'typewriter-effect';
+
+type updateHook = React.Dispatch<React.SetStateAction<string>>;
 
 export default class TemplateHome {
-  mouse: MouseXY
-  constructor(mousePos: MouseXY) {
+  mouse: MouseXY;
+  buttonName: string;
+  updateButtonName: updateHook;
+  
+  constructor(mousePos: MouseXY, name: string, updateName: updateHook) {
     this.mouse = mousePos;
+    this.buttonName = name;
+    this.updateButtonName = updateName;
   }
 
   landing(): JSX.Element {
@@ -17,11 +25,17 @@ export default class TemplateHome {
     return (
       <section>
         {/* See below (1) */}
-        <div><div className='mountain' style = { bg.mountain }></div></div> {/* Mountain background image */}
-        <div><div className='clouds' style = { bg.clouds }></div></div> {/* Clouds background image */}
-        <div><div className='tree' style = { bg.tree }></div></div> {/* Tree background image */}
-        <h1>{ homeSettings.title }</h1>
-        <button onClick = { () => { changeRoute(homeSettings.buttonUrl) } }>{ homeSettings.buttonText }</button>
+        <div><div className = 'mountain' style = { bg.mountain }></div></div> {/* Mountain background image */}
+        <div><div className = 'clouds' style = { bg.clouds }></div></div> {/* Clouds background image */}
+        <div><div className = 'tree' style = { bg.tree }></div></div> {/* Tree background image */}
+        <h1><Typewriter onInit = { (typewriter) => {
+            typewriter.typeString(homeSettings.title)
+            .callFunction(() => { this.updateButtonName('active') }) // Will call to make the button visible after it's done
+            .start();
+        } }/></h1>
+        <button className = { this.buttonName }
+          onClick = { () => { changeRoute(homeSettings.buttonUrl) } }
+        >{ homeSettings.buttonText }</button>
       </section>
     )
   }
