@@ -1,4 +1,4 @@
-import { navigation, footer } from "./global";
+import { navigation } from "./global";
 import { homeSettings } from '../../lib/settings';
 import { changeRoute } from '../../lib/actions';
 import { MouseXY } from "../../lib/types";
@@ -10,30 +10,38 @@ export default class TemplateHome {
   mouse: MouseXY;
   buttonName: string;
   updateButtonName: updateHook;
+  xpos: number;
   
-  constructor(mousePos: MouseXY, name: string, updateName: updateHook) {
+  constructor(mousePos: MouseXY, name: string, updateName: updateHook, xpos: number) {
     this.mouse = mousePos;
     this.buttonName = name;
     this.updateButtonName = updateName;
+    this.xpos = xpos;
   }
 
   landing(): JSX.Element {
     const x = this.mouse.x / window.innerWidth;
     const y = this.mouse.y / window.innerHeight;
-    const bg = homeSettings.bgPos({ x, y });
+    const bgMountain = homeSettings.bgPos({ x, y }, 0).mountain;
+    const bgClouds = homeSettings.bgPos({ x, y }, this.xpos).clouds;
+    const bgTree = homeSettings.bgPos({ x, y }, 0).tree;
 
     return (
       <section>
         {/* See below (1) */}
-        <div><div className = 'mountain' style = { bg.mountain }></div></div> {/* Mountain background image */}
-        <div><div className = 'clouds' style = { bg.clouds }></div></div> {/* Clouds background image */}
-        <div><div className = 'tree' style = { bg.tree }></div></div> {/* Tree background image */}
-        <h1><Typewriter onInit = { (typewriter) => {
-            typewriter.typeString(homeSettings.title)
-            .callFunction(() => { this.updateButtonName('active') }) // Will call to make the button visible after it's done
-            .start();
-        } }/></h1>
-        <button className = { this.buttonName }
+        <div><div className = 'mountain' style = { bgMountain }></div></div> {/* Mountain background image */}
+        <div><div className = 'clouds' style = { bgClouds }></div></div> {/* Clouds background image */}
+        <div><div className = 'tree' style = { bgTree }></div></div> {/* Tree background image */}
+        <h1><Typewriter
+          onInit = { (typewriter) => {
+              typewriter.typeString(homeSettings.title)
+              .callFunction(() => { this.updateButtonName('active') }) // Will call to make the button visible after it's done
+              .start();
+          } }
+        /></h1>
+        <button
+          className = { this.buttonName }
+          disabled = { (this.buttonName === 'active') ? false : true }
           onClick = { () => { changeRoute(homeSettings.buttonUrl) } }
         >{ homeSettings.buttonText }</button>
       </section>
@@ -42,7 +50,7 @@ export default class TemplateHome {
 
   // Will be manually called via home component
   output(): JSX.Element {
-    return (<>{ navigation() }{ this.landing() }{ footer() }</>)
+    return (<>{ navigation() }{ this.landing() }</>)
   }
 }
 
