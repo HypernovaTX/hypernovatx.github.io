@@ -1,18 +1,18 @@
 import { navigation } from "./global";
 import { homeSettings } from '../../lib/settings';
 import { changeRoute } from '../../lib/actions';
-import { MouseXY } from "../../lib/types";
+import { XY } from "../../lib/types";
 import Typewriter from 'typewriter-effect';
 
 type updateHook = React.Dispatch<React.SetStateAction<string>>;
 
 export default class TemplateHome {
-  mouse: MouseXY;
+  mouse: XY;
   buttonName: string;
   updateButtonName: updateHook;
   xpos: number;
   
-  constructor(mousePos: MouseXY, name: string, updateName: updateHook, xpos: number) {
+  constructor(mousePos: XY, name: string, updateName: updateHook, xpos: number) {
     this.mouse = mousePos;
     this.buttonName = name;
     this.updateButtonName = updateName;
@@ -27,7 +27,7 @@ export default class TemplateHome {
     const bgTree = homeSettings.bgPos({ x, y }, 0).tree;
 
     return (
-      <section>
+      <section className = 'home'>
         {/* See below (1) */}
         <div><div className = 'mountain' style = { bgMountain }></div></div> {/* Mountain background image */}
         <div><div className = 'clouds' style = { bgClouds }></div></div> {/* Clouds background image */}

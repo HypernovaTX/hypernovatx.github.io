@@ -1,7 +1,7 @@
 /**
  * This is a library of all of the settings used in the website
  */
-import { MouseXY } from './types';
+import { XY } from './types';
 
 // Global stuff
 export const siteName =                 'Arthur Guo \'s Website';
@@ -21,7 +21,7 @@ export const homeSettings = {
   buttonText:         'Who I am exactly?',
   buttonUrl:          siteNavigation.list[1][1],
   landerImg:          '/resources/img/mountain-base.jpg',
-  bgPos: (m: MouseXY, x: number) => {
+  bgPos: (m: XY, x: number) => {
     return {
       mountain: {
         backgroundPositionX: `calc(50% - ${ (m.x * 24) }px)`,
@@ -42,9 +42,9 @@ export const homeSettings = {
 // About page
 export const aboutSettings = {
   title:              'Who I am?',
-  paragraph:          <p>My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with a clear goal: to show the world what I can build. Creativity and problem solving is my bread and butter.</p>,
-  paragraph2:         <p>Since I was young, I always wanted to turn my imagination into reality. In my earlier days, I started drawing to express myself. During my high school years (2007 - 2011), I started creating games as a hobby. Eventually, I need to build websites for my games, so I learned the basics around early 2010s. I then moved on to build apps for mobile phones and learned many new things. I wanted to become a developer so I started to learn new languages and tools the past few years. Most noteably JavaScript, TypeScript, PHP, React, and MySQL.</p>,
+  paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with a clear goal: to show the world what I can build. Creativity and problem solving is my bread and butter.',
+  paragraph2:         'At a young age, I always wanted to turn my imagination into reality. In my earlier days, I started drawing to express myself. During my high school years (2007 - 2011), I started creating games as a hobby. Eventually, I need to build websites for my games, so I learned the basics around early 2010s. I then moved on to build apps for mobile phones and learned many new things. I wanted to become a developer so I started to learn new languages and tools the past few years. Most noteably JavaScript, TypeScript, PHP, React, and MySQL.',
 
   skillTitle:         'Skills',
-  
+
 };
