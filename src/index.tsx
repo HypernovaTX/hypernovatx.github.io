@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import './resources/index.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, HashRouter } from 'react-router-dom';
 
 // Components (pages)
 import Home from './components/home';
@@ -10,12 +10,14 @@ import About from './components/about';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/"><Home/></Route> {/* HOME */}
-        <Route exact path="/about"><About/></Route> {/* HOME */}
-      </Switch>
-    </Router>
+    <HashRouter basename={process.env.PUBLIC_URL}>
+      <Router>
+        <Switch>
+          <Route exact path="/"><Home/></Route> {/* HOME */}
+          <Route exact path="/about"><About/></Route> {/* HOME */}
+        </Switch>
+      </Router>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
