@@ -1,18 +1,38 @@
 // Root SCSS (desktop)
 @import './_presets';
 
+@font-face {
+  font-family: Roboto;
+  src: url(./roboto.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(./roboto-thin.ttf);
+  font-weight: 100;
+}
+@font-face {
+  font-family: Squada One;
+  src: url(./squada-one.ttf)
+}
+@font-face {
+  font-family: Noto Sans;
+  src: url(./notosans.otf)
+}
+
 :root {
   --cloud-x-offset: 0px;
+  --accent-color: $color-accent;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Roboto, Noto Sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
+
+  // Old font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
 
   // Code block
   code {
@@ -25,6 +45,33 @@ body {
     position: fixed;
     right: 0px;
     user-select: none;
+    z-index: 99;
+
+    div.top-wave {
+      position: fixed;
+      left: 0px;
+      width: 100%;
+      height: 30em;
+      z-index: -1;
+      transition: 500ms ease-out all;
+      transform: translateY(-280px) scaleY(-1);
+
+      div {
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        height: 30em;
+      }
+
+      path {
+        fill: $color-accent;
+        opacity: 0.5;
+      }
+
+      &.active {
+        transform: translateY(-160px) scaleY(-1);
+      }
+    }
     
     // Navigation bar items
     span {
@@ -52,7 +99,7 @@ body {
 
     // Footer text
     span {
-      margin: 1rem 2rem;
+      margin: 2rem 3rem;
       display: block;
       
     }

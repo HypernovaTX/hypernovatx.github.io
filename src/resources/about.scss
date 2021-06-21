@@ -1,8 +1,9 @@
 @import './_presets';
+$skill-bg-grad: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(20, 20, 20, 1) 100%);
 
 header {
   width: 100%;
-  height: 50vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -16,6 +17,7 @@ header {
     text-shadow: 2px 2px 2px #000;
     font-weight: 300;
     margin: 0.25em 1em;
+    font-family: Squada One;
   }
 
   div.block {
@@ -24,13 +26,12 @@ header {
     margin: 0 5%;
 
     img {
-      content: url(./img/arthurguo.jpg);
       max-width: 10em;
       max-height: 10em;
       margin: 0.5em 0;
-      margin-right: 1.5em;
-      border: 4px solid $color-white;
-      box-shadow: 0 4px 2px #000;
+      margin-right: 2em;
+      border: 1px solid #555;
+      box-shadow: 0 0 0 6px $color-white, 0 4px 2px #000;
     }
   
     div.paragraph {
@@ -41,37 +42,10 @@ header {
       background: rgba(0, 0, 0, 0.8);
       font-weight: 300;
       white-space: pre-line;
-      max-height: 30vh;
+      max-width: 40em;
+      max-height: 40vh;
       overflow: hidden;
-    }
-  }
-
-  
-
-
-
-  button {
-    margin: 0px 2em 4px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 4px solid $color-accent;
-    color: $color-accent;
-    padding: 1em 2em;
-    font-size: 1.5rem;
-    transition: 200ms linear all, 1000ms linear opacity;
-    border-radius: 2em;
-    box-shadow: 0px 8px 4px -2px #000;
-    backdrop-filter: blur(8px);
-
-    &:not(&:disabled) { cursor: pointer; }
-
-    &.hidden { opacity: 0; }
-    &.active { opacity: 1; }
-
-    &:hover:not(&:disabled) { background: rgba(255, 255, 255, 0.8); }
-    &:active:not(&:disabled) {
-      margin: 4px 2em 0px;
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0px 4px 2px -1px #000;
+      box-shadow: 0 4px 5px -2px rgb(0, 0, 0, 0.5);
     }
   }
   
@@ -98,6 +72,167 @@ header {
       height: inherit;
       top: 0px;
       background: $shade-top, $shade-cover;
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+
+
+section.skills {
+  background: $skill-bg-grad, url('./img/pattern.svg') $color-black2;
+  background-attachment: scroll, fixed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  h1 {
+    color: $color-white;
+    font-weight: 300;
+    margin: 2em;
+    font-size: 2em;
+    font-family: Squada One;
+    z-index: 1;
+  }
+
+  div.skillbox {
+    margin: 1em 2em; 
+    padding: 1em 2em;
+    max-width: 40em;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
+    transition: 200ms linear all;
+    transform: translate(0px, 0px) scale(100%, 100%);
+
+    summary {
+      font-size: 1.25em;
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+
+    .split {
+      display: flex;
+
+      .image {
+        border: 6px solid $color-white;
+        box-shadow: 0 4px 2px #000;
+        width: 82px;
+        height: 82px;
+        transition: 500ms ease-out all;
+        transform: rotateZ(0deg) scale(1, 1);
+
+        img {
+          width: 80px;
+          height: 80px;
+          border: 1px solid #555;
+          background: rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .texts {
+        margin-left: 1em;
+
+        p {
+          margin: 0 0 0.5em;
+        }
+        div.tags {
+          display: inline-block;
+          text-align: center;
+          margin: 0;
+
+          span {
+            margin: 0.25em 0.5em;
+            padding: 0.5em 1.5em;
+            background-color: $color-accent;
+            color: #EEE;
+            display: inline-block;
+            border-radius: 2em;
+            transition: 200ms linear all;
+            text-shadow: 2px 2px 2px #000;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+            transform: translate(0, 0px);
+            user-select: none;
+
+            &:hover {
+              background-color: $color-accent2;
+              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+              transform: translate(0, -4px);
+            }
+          }
+        }
+      }
+    }
+
+    &.front-end {
+      .image {
+        background: url(./img/iconbg-frontend.jpg);
+        background-size: 100%;
+        background-position: 50%;
+      }
+    }
+
+    &.back-end {
+      .image {
+        background: url(./img/iconbg-backend.jpg);
+        background-size: 100%;
+        background-position: 50%;
+      }
+    }
+
+    &.game-dev {
+      .image {
+        background: url(./img/iconbg-gamedev.jpg);
+        background-size: 100%;
+        background-position: 50%;
+      }
+    }
+
+    &.others {
+      .image {
+        background: url(./img/iconbg-others.jpg);
+        background-size: 100%;
+        background-position: 50%;
+      }
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.75);
+      transform: translate(0px, -8px) scale(105%, 105%);
+      box-shadow: 0px 8px 32px rgba(0, 0, 0, 1);
+      
+      .image {
+        box-shadow: 0 4px 8px #000;
+        transform: rotateZ(-10deg) scale(1.2, 1.2);
+        background-size: 200%;
+      }
+    }
+  }
+
+  button {
+    margin: 2em 0 3em;
+    background: rgba(255, 255, 255, 0.5);
+    border: 4px solid $color-accent;
+    color: $color-accent;
+    padding: 1em 1.5em;
+    font-size: 1rem;
+    transition: 200ms linear all, 1000ms linear opacity;
+    border-radius: 2em;
+    box-shadow: 0px 8px 4px -2px #000;
+    backdrop-filter: blur(8px);
+    transform: translate(0px, 0px);
+
+    &:not(&:disabled) { cursor: pointer; }
+
+    &.hidden { opacity: 0; }
+    &.active { opacity: 1; }
+
+    &:hover:not(&:disabled) { background: rgba(255, 255, 255, 0.8); }
+    &:active:not(&:disabled) {
+      background: rgba(255, 255, 255, 1);
+      transform: translate(0px, 2px);
+      box-shadow: 0px 4px 2px -1px #000;
     }
   }
 }

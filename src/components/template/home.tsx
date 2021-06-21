@@ -1,5 +1,5 @@
 import { navigation } from "./global";
-import { homeSettings } from '../../lib/settings';
+import { homeSettings, mobileDevice } from '../../lib/settings';
 import { changeRoute } from '../../lib/actions';
 import { XY } from "../../lib/types";
 import Typewriter from 'typewriter-effect';
@@ -22,9 +22,15 @@ export default class TemplateHome {
   landing(): JSX.Element {
     const x = this.mouse.x / window.innerWidth;
     const y = this.mouse.y / window.innerHeight;
-    const bgMountain = homeSettings.bgPos({ x, y }, 0).mountain;
-    const bgClouds = homeSettings.bgPos({ x, y }, this.xpos).clouds;
-    const bgTree = homeSettings.bgPos({ x, y }, 0).tree;
+
+    // Grab all of the background position (desktop has parallax cursor effect, mobile doesn't)
+    let getBgPos = homeSettings.bgPosDesktop({ x, y }, this.xpos);
+    if (mobileDevice.test(navigator.userAgent)) {
+      getBgPos = homeSettings.bgPosMobile(this.xpos);
+    }
+    const bgMountain = getBgPos.mountain;
+    const bgClouds = getBgPos.clouds;
+    const bgTree = getBgPos.tree;
 
     return (
       <section className = 'home'>
