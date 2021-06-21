@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import './resources/index.scss';
-import { BrowserRouter as Router, Switch, Route, HashRouter } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, HashRouter } from 'react-router-dom';
 
 // Components (pages)
 import Home from './components/home';

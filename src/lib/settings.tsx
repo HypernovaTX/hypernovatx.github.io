@@ -9,10 +9,10 @@ export const siteRoot =                 '';
 export const siteFooterText =           'Website designed by Arthur (Hypernova) Guo - 2021';
 export const mobileDevice =             /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i;
 export const siteNavigation =           { list: [
-  ['Home', siteRoot + '/'],
-  ['About Me', siteRoot + '/about'],
-  ['Projects', siteRoot + '/projects'],
-  ['Contact', siteRoot + '/contact']
+  ['Home', siteRoot + '/#'],
+  ['About Me', siteRoot + '/#/about'],
+  ['Projects', siteRoot + '/#/projects'],
+  ['Contact', siteRoot + '/#/contact']
 ] };
 
 // Home page
