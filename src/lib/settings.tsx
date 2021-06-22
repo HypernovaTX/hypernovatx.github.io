@@ -91,5 +91,5 @@ export const aboutSettings = {
 // Projects page
 export const projectSettings = {
   title:              'Projects',
-  summary:            'Here are a list of my notable projects I have built in the past. (UNDER CONSTRUCTION)',
+  summary:            'Here are a list of my notable projects I have built in the past.',
 }

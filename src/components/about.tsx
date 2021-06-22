@@ -6,8 +6,7 @@ import { useState } from 'react';
 export default function About() {
   const [aStep, updateAStep] = useState(false);
 
-  //const xpos = addX();
   const scrollPos = useScrollPosition();
-  const template = new templateAbout(scrollPos, aStep, updateAStep);//(mousePos, name, updateName, xpos);
+  const template = new templateAbout(scrollPos, aStep, updateAStep);
   return(template.output());
 }

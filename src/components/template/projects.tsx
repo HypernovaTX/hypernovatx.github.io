@@ -1,16 +1,27 @@
 import { footer, navigation } from "./global";
 import { projectSettings } from '../../lib/settings';
 import { pList } from '../../lib/projects';
-//import { Animate, AnimateGroup } from 'react-simple-animate';
-//import { changeRoute } from '../../lib/actions'; 
+import { XY } from '../../lib/types'
 
 
 
 export default class templateProjects {
+  scroll: XY;
+
+  constructor(scr: XY) {
+    this.scroll = scr;
+  }
+
   landing(): JSX.Element {
+    // Used for parallx background scroll
+    const landerBGStyle = {
+      backgroundPositionY: `calc(70% + ${Math.round(this.scroll.y / 2)}px)`
+    };
+
+
     return (
       <header className = 'projects'>
-        <div className = 'bg'></div> {/* Lander background */}
+        <div className = 'bg' style = { landerBGStyle }></div> {/* Lander background */}
         <h1>{ projectSettings.title }</h1>
         <p>{ projectSettings.summary }</p>
       </header>
@@ -32,14 +43,13 @@ export default class templateProjects {
       </dd>);
     };
 
+    // Map an array of Button elements for URLs for each of the projects
     const urlList = (_urlLs: { name: string, link: string }[], _no: number) => {
       if (_urlLs.length === 0) { return <></>; }
 
-      return (<dd>
-        { _urlLs.map((_it, _id) => 
-          <a key = { `indexu_${_no + _id}`} href = { _it.link }>{ _it.name }</a>
-        ) }
-      </dd>)
+      return (<dd>{
+        _urlLs.map((_it, _id) => <a key = { `indexu_${_no + _id}`} href = { _it.link } target = '_blank' rel = 'noreferrer'>{ _it.name }</a>)
+      }</dd>);
     };
 
     const projects = pList.map((item, index) => 
@@ -50,7 +60,7 @@ export default class templateProjects {
           <dd><b>Type: </b>{ item.type }</dd>
           <dd><b>Date: </b>{ item.life }</dd>
           <dd><b>Tools: </b>{ item.tools.join(', ') }</dd>
-          <dd>{ item.description }</dd><br/>
+          <br/><dd>{ item.description }</dd><br/>
           { iLearned(item.learned, index) }
           { urlList(item.url, index) }
         </div>

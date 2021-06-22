@@ -1,9 +1,9 @@
 @import './_presets';
-$skill-bg-grad: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(20, 20, 20, 1) 100%);
+$skill-bg-grad: linear-gradient(0deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0) 50%, rgba(0, 0, 0, 1) 100%);
 
 header.projects {
   width: 100%;
-  height: 30vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -20,7 +20,10 @@ header.projects {
     font-family: Squada One;
   }
   p {
+    font-size: 1.5em;
+    font-weight: 300;
     text-shadow: 2px 2px 2px #000;
+    margin: 0.25em 1em;
   }
 
   div.block {
@@ -69,7 +72,7 @@ header.projects {
 
 
 section.projects {
-  background: $skill-bg-grad, url('./img/pattern.svg') $color-black2;
+  background: $skill-bg-grad, url('./img/stars.jpg') $color-black2;
   background-attachment: scroll, fixed;
   overflow: hidden;
   display: flex;
@@ -78,25 +81,97 @@ section.projects {
   justify-content: flex-start;
   color: $color-white;
 
-  h1 {
-    
-    font-weight: 300;
-    margin: 2em;
-    font-size: 2em;
-    font-family: Squada One;
-    z-index: 1;
-  }
-
   .proj {
+    margin: 0;
+    padding: 3em 2em;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    perspective: 2000px;
+    perspective-origin: 50% 50%;
+    text-shadow: 2px 2px 2px #000;
+
+    img {
+      margin: 1em 2em;
+      transition: 1000ms linear all;
+      transform: rotateY(5deg);
+      box-shadow: 0px 4px 24px #000;
+    }
 
     .right {
       margin: 1em 2em;
       padding: 1em 2em;
-      background: rgba(0, 0, 0, 0.5);
+      background: mix(rgba(0, 0, 0, 0), $color-accent);
+      backdrop-filter: blur(8px);
+      transition: 1000ms linear all;
+      transform: rotateY(-5deg);
+      box-shadow: 0px 4px 24px #000;
+
+      h2 {
+        font-weight: 100;
+        margin: 1em 1em 0.5em;
+        border-bottom: 1px solid $color-white2;
+        padding-bottom: calc(0.5em - 1px);
+        font-size: 2.25em;
+        font-family: Squada One;
+        z-index: 1;
+      }
+
+      dd {
+        margin-inline-start: 0em;
+        margin: 0em 2em;
+        font-weight: 100;
+        font-size: 1.25em;
+
+        b {
+          font-weight: 600;
+          margin-right: 0.25em;
+          font-size: 1.05em;
+        }
+        ul { margin-block-start: 0em; }
+
+        a {
+          display: inline-block;
+          margin: 0 0.5em 0.5em;
+          background: rgba(255, 255, 255, 0.5);
+          border: 3px solid $color-accent;
+          color: $color-accent;
+          font-weight: 600;
+          text-decoration: none;
+          padding: 0.75em 1em;
+          font-size: 1.25rem;
+          transition: 200ms linear all, 1000ms linear opacity;
+          border-radius: 2em;
+          box-shadow: 0px 8px 4px -2px #000;
+          backdrop-filter: blur(8px);
+          transform: translate(0px, 0px);
+          text-shadow: none;
+      
+          &:hover { background: rgba(255, 255, 255, 0.8); }
+          &:active {
+            background: rgba(255, 255, 255, 1);
+            transform: translate(0px, 2px);
+            box-shadow: 0px 4px 2px -1px #000;
+          }
+
+          &:first-child { margin-left: 0; }
+          &:last-child { margin-right: 0; }
+        }
+      }
+    }
+
+    
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      img { transform: rotateY(-5deg); }
+      .right { transform: rotateY(5deg); }
+    }
+
+    &:hover {
+      img, .right { transform: rotateY(0deg); box-shadow: 0px 4px 4px #000; }
     }
   }
 }
