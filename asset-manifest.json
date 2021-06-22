@@ -1,26 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.237bd636.chunk.css",
-    "main.js": "/static/js/main.88f38bd5.chunk.js",
-    "main.js.map": "/static/js/main.88f38bd5.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e0c9a9b5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e0c9a9b5.js.map",
-    "static/js/2.a7e02c5d.chunk.js": "/static/js/2.a7e02c5d.chunk.js",
-    "static/js/2.a7e02c5d.chunk.js.map": "/static/js/2.a7e02c5d.chunk.js.map",
-    "static/js/3.ed777ef7.chunk.js": "/static/js/3.ed777ef7.chunk.js",
-    "static/js/3.ed777ef7.chunk.js.map": "/static/js/3.ed777ef7.chunk.js.map",
+    "main.css": "/static/css/main.4a391af4.chunk.css",
+    "main.js": "/static/js/main.d24445bc.chunk.js",
+    "main.js.map": "/static/js/main.d24445bc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fedd3e52.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fedd3e52.js.map",
+    "static/js/2.7056ad9e.chunk.js": "/static/js/2.7056ad9e.chunk.js",
+    "static/js/2.7056ad9e.chunk.js.map": "/static/js/2.7056ad9e.chunk.js.map",
+    "static/js/3.c39677ab.chunk.js": "/static/js/3.c39677ab.chunk.js",
+    "static/js/3.c39677ab.chunk.js.map": "/static/js/3.c39677ab.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.237bd636.chunk.css.map": "/static/css/main.237bd636.chunk.css.map",
-    "static/js/2.a7e02c5d.chunk.js.LICENSE.txt": "/static/js/2.a7e02c5d.chunk.js.LICENSE.txt",
+    "static/css/main.4a391af4.chunk.css.map": "/static/css/main.4a391af4.chunk.css.map",
+    "static/js/2.7056ad9e.chunk.js.LICENSE.txt": "/static/js/2.7056ad9e.chunk.js.LICENSE.txt",
+    "static/media/ag.jpg": "/static/media/ag.f9e27371.jpg",
     "static/media/arthurguo.jpg": "/static/media/arthurguo.3b209473.jpg",
     "static/media/about.scss": "/static/media/pattern.7eccdfcc.svg",
     "static/media/home.scss": "/static/media/mountain-base.c4abd33a.jpg",
-    "static/media/index.scss": "/static/media/squada-one.819b05bf.ttf"
+    "static/media/cops.jpg": "/static/media/cops.c6b1f732.jpg",
+    "static/media/dfwmr.jpg": "/static/media/dfwmr.a1ef4427.jpg",
+    "static/media/projects.scss": "/static/media/interchange.30d515df.jpg",
+    "static/media/jjpool.jpg": "/static/media/jjpool.59818edb.jpg",
+    "static/media/index.scss": "/static/media/squada-one.819b05bf.ttf",
+    "static/media/removu.jpg": "/static/media/removu.198adece.jpg",
+    "static/media/rtg2.jpg": "/static/media/rtg2.f7836e98.jpg",
+    "static/media/tgrb.jpg": "/static/media/tgrb.af474956.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e0c9a9b5.js",
-    "static/js/2.a7e02c5d.chunk.js",
-    "static/css/main.237bd636.chunk.css",
-    "static/js/main.88f38bd5.chunk.js"
+    "static/js/runtime-main.fedd3e52.js",
+    "static/js/2.7056ad9e.chunk.js",
+    "static/css/main.4a391af4.chunk.css",
+    "static/js/main.d24445bc.chunk.js"
   ]
 }
