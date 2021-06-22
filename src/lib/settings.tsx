@@ -12,7 +12,7 @@ export const siteNavigation =           { list: [
   ['Home', siteRoot + '/#'],
   ['About Me', siteRoot + '/#/about'],
   ['Projects', siteRoot + '/#/projects'],
-  ['Contact', siteRoot + '/#/contact']
+  ['Contact', siteRoot + 'https://forms.gle/b2VFnmVQmQhZh48G8']
 ] };
 
 // Home page
@@ -87,3 +87,9 @@ export const aboutSettings = {
     }, 
   ]
 };
+
+// Projects page
+export const projectSettings = {
+  title:              'Projects',
+  summary:            'Here are a list of my notable projects I have built in the past. (UNDER CONSTRUCTION)',
+}

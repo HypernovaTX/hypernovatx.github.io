@@ -54,7 +54,7 @@ export default class TemplateHome {
     )
   }
 
-  // Will be manually called via home component
+  // Will be manually called via "Home" component
   output(): JSX.Element {
     return (<>{ navigation() }{ this.landing() }</>)
   }

@@ -32,7 +32,7 @@ export default class templateAbout {
     const aniEndI = { flex: '0 0 0%', opacity: 1, display: 'block', transform: 'translateX(0px) rotateY(-10deg) rotateZ(-5deg)' };
 
     return (
-      <header>
+      <header className = 'about'>
         <div style = { landerBGStyle } className = 'bg'></div> {/* Lander background */}
         <h1>
           <Typewriter options = {{ delay: 30, cursor: '' }}
@@ -88,9 +88,11 @@ export default class templateAbout {
     ) });
 
     return (
-      <section className='skills'>
+      <section className = 'skills'>
         <h1>{ aboutSettings.skillTitle }</h1>
-        { skillList }
+        <div className = 'flex-skills'>
+          { skillList }
+        </div>
         <button
           onClick = { () => { changeRoute(aboutSettings.buttonUrl) } }
         >{ aboutSettings.buttonText }</button>
@@ -98,7 +100,7 @@ export default class templateAbout {
     )
   }
 
-  // Will be manually called via home component
+  // Will be manually called via "About" component
   output(): JSX.Element {
     return (<>
       { navigation() }
