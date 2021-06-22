@@ -70,9 +70,7 @@ export default class templateProjects {
 
     return (
       <section className = 'projects'>
-        <div className = 'list>'>
-          { projects }
-        </div>
+        { projects }
       </section>
     )
   }

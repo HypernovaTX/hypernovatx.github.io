@@ -2,7 +2,7 @@ import { footer, navigation } from "./global";
 import { aboutSettings } from '../../lib/settings';
 import { XY } from '../../lib/types';
 import { Animate, AnimateGroup } from 'react-simple-animate';
-import Typewriter, { TypewriterClass } from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
 import { changeRoute } from '../../lib/actions';
 
 
@@ -10,13 +10,13 @@ type aStepFunc = React.Dispatch<React.SetStateAction<boolean>>;
 
 export default class templateAbout {
   scroll: XY; // Used for getting page offset values
-  aStep: boolean; // Whether to start <Animate> or not in "landing"
-  aStepUpdate: aStepFunc; // Call to update aStep to true
+  aDelay: boolean; // Whether to start <Animate> or not in "landing"
+  aUpdate: aStepFunc; // Call to update aStep to true
 
-  constructor(scrollPos: XY, aStep: boolean, aStepUpdate: aStepFunc) {
+  constructor(scrollPos: XY, animationDelay: boolean, animationUpdate: aStepFunc) {
     this.scroll = scrollPos;
-    this.aStep = aStep;
-    this.aStepUpdate = aStepUpdate;
+    this.aDelay = animationDelay;
+    this.aUpdate = animationUpdate;
   }
 
   landing(): JSX.Element {
@@ -38,25 +38,20 @@ export default class templateAbout {
           <Typewriter options = {{ delay: 30, cursor: '' }}
             onInit = { (typewriter) => {
                 typewriter.typeString(aboutSettings.title)
-                .callFunction(() => { this.aStepUpdate(true) }) // Call this to start AnimateGroup in div.block (below)
+                .callFunction(() => { this.aUpdate(true) }) // Call this to start AnimateGroup in div.block (below)
                 .start();
             } }
           />
         </h1>
         <div className = 'block'>
-          <AnimateGroup play = { this.aStep }>
+          <AnimateGroup play = { this.aDelay }>
             <Animate start = { aniStartI } end = { aniEndI } duration = { 0.5 } sequenceIndex = { 0 }>
               <img alt = '' src = { aboutSettings.landerImg.default }></img> {/* Image of myself */}
             </Animate>
             <Animate start = { aniStartP } end = { aniEndP } duration = { 0.5 } sequenceIndex = { 1 }>
               <div className = 'paragraph'> {/* The block for the paragraph in the lander */}
-                <Typewriter options = {{ delay: 0.01 }}
-                  onInit = { (typewriter: TypewriterClass) => {
-                    typewriter.pauseFor(1200)
-                    .typeString(aboutSettings.paragraph + '\n\n' + aboutSettings.paragraph2)
-                    .start();
-                  } }
-                />
+                <div>{ aboutSettings.paragraph + '\n\n' + aboutSettings.paragraph2 }</div>
+                {/*(1)*/}
               </div>
             </Animate>
           </AnimateGroup>
@@ -114,7 +109,10 @@ export default class templateAbout {
 /**
  * FOOTNOTES
  * 
- * (1) - 
+ * (1) - Removed typewriter on the about summary because it takes too long and there are no hooks to create an option to skip it:
+ * <Typewriter options = {{ delay: 1 }} onInit = { (typewriter: TypewriterClass) => {
+ *   typewriter.pauseFor(0).typeString('').start();
+ * } }/>
  * 
  * 
  * 

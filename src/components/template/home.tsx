@@ -38,7 +38,7 @@ export default class TemplateHome {
         <div><div className = 'mountain' style = { bgMountain }></div></div> {/* Mountain background image */}
         <div><div className = 'clouds' style = { bgClouds }></div></div> {/* Clouds background image */}
         <div><div className = 'tree' style = { bgTree }></div></div> {/* Tree background image */}
-        <h1><Typewriter
+        <h1><Typewriter options = {{ delay: 60 }}
           onInit = { (typewriter) => {
               typewriter.typeString(homeSettings.title)
               .callFunction(() => { this.updateButtonName('active') }) // Will call to make the button visible after it's done
