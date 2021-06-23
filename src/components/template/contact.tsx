@@ -49,7 +49,7 @@ export default class templateContact {
     const validateMessage = () => { this.formErr.message = (this.forms.message) ? 0 : 1; };
 
     // If nothing is inserted, validate all of them;
-    if (!form) {
+    if (typeof form === 'undefined') {
       validateName(); validateEmail(); validatePhone(); validateCompany(); validateMessage(); return;
     }
 
@@ -66,23 +66,23 @@ export default class templateContact {
     switch (form) {
       case f.name:
         this.forms.name = input;
-        if (this.formErr.name) { this.validateForm(form); }
+        if (this.formErr.name > 0) { this.validateForm(form); }
         break;
       case f.email: 
         this.forms.email = input; 
-        if (this.formErr.email) { this.validateForm(form); }
+        if (this.formErr.email > 0) { this.validateForm(form); }
         break;
       case f.phone: 
         this.forms.phone = formatPhoneText(input); 
-        if (this.formErr.phone) { this.validateForm(form); }
+        if (this.formErr.phone > 0) { this.validateForm(form); }
         break;
       case f.company: 
         this.forms.company = input; 
-        if (this.formErr.company) { this.validateForm(form); }
+        if (this.formErr.company > 0) { this.validateForm(form); }
         break;
       case f.message: 
         this.forms.message = input; 
-        if (this.formErr.message) { this.validateForm(form); }
+        if (this.formErr.message > 0) { this.validateForm(form); }
         break;
     }
     this.updateForms(this.forms);
@@ -144,6 +144,9 @@ export default class templateContact {
 
     return (
       <form onSubmit = {(e) => { this.sendData(e) }} noValidate = { true }>
+        <div className = { `form-load ${ (this.sendStat) ? 'active' : '' }` }>
+          <div className = 'throbber'></div>
+        </div>
         <div>
           <label>{ CS.formName.label }</label>
           <input

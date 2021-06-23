@@ -3,7 +3,7 @@ import templateContact from './template/contact';
 import '../resources/contact.scss';
 import { XY, contactForms, contactErr } from '../lib/types';
 import emailjs, { init as initEmailJS } from 'emailjs-com';
-import { emailJsKey, emailJsService, emailJsTemplate } from '../lib/settings';
+import { emailJsKey, emailJsService, emailJsTemplate, contactSettings as CS } from '../lib/settings';
 
 type Props = {};
 type State = {
@@ -41,17 +41,17 @@ export default class Contact extends React.Component<Props, State> {
     const payload = { ...forms }
     const send = () => { emailjs.send(emailJsService, emailJsTemplate, payload, '')
       .then((result) => {
-        if (result.text === 'OK') { alert('Thanks for the email! I will review your message and respond if interested!'); }
-        else { alert('There is something wrong with the email service! Please try again later!'); }
+        if (result.text === 'OK') { alert(CS.successMsg); }
+        else { alert(CS.failMsg); }
         this.setState({ sending: false });
       }, (error) => {
-        alert('There is something wrong with the email service! Please try again later!');
+        alert(CS.failMsg);
         console.log(error.text);
       });
     }
 
     this.setState({ sending: true });
-    setTimeout(send, 1000);
+    setTimeout(send, 2000);
   };
 
   resetForm = (): void => {

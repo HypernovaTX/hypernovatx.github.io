@@ -67,6 +67,39 @@ section.contact {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
     transition: 500ms ease-out transform, 500ms linear background-color;
     transform: translate(0px, 0px);
+    overflow: hidden;
+    position: relative;
+
+    .form-load {
+      position: absolute;
+      background-color: rgba($color-accent, 0.8);
+      width: 0%;
+      height: 0%;
+      left: 50%;
+      top: 50%;
+      overflow: hidden;
+      transition: 500ms ease-in-out all;
+      border-radius: 50%;
+      color: $color-white;
+      text-overflow: hidden;
+      display: flex;
+      align-items: center;
+      z-index: 99;
+
+      div.throbber {
+        background-image: url('./img/oval.svg');
+        background-size: cover;
+        width: 3em;
+        height: 3em;
+      }
+
+      &.active {
+        width: 200%;
+        height: 200%;
+        left: -50%;
+        top: -50%;
+      }
+    }
 
     &:focus-within, &:hover {
       background: rgba(255, 255, 255, 0.75);
