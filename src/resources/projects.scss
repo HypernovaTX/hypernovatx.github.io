@@ -1,5 +1,5 @@
 @import './_presets';
-$skill-bg-grad: linear-gradient(0deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0) 50%, rgba(0, 0, 0, 1) 100%);
+
 
 header.projects {
   width: 100%;
@@ -24,21 +24,6 @@ header.projects {
     font-weight: 300;
     text-shadow: 2px 2px 2px #000;
     margin: 0.25em 1em;
-  }
-
-  div.block {
-    display: flex;
-    align-items: center;
-    margin: 0 5%;
-    
-    img {
-      max-width: 10em;
-      max-height: 10em;
-      margin: 0.5em 0;
-      margin-right: 2em;
-      border: 1px solid #555;
-      box-shadow: 0 0 0 6px $color-white, 0 4px 2px #000;
-    }
   }
   
   // Background image part
@@ -70,9 +55,9 @@ header.projects {
 }
 
 
-
+$bg-grad: linear-gradient(0deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0) 50%, rgba(0, 0, 0, 1) 100%);
 section.projects {
-  background: $skill-bg-grad, url('./img/stars.jpg') $color-black2;
+  background: $bg-grad, url('./img/stars.jpg') $color-black2;
   background-attachment: scroll, fixed;
   overflow: hidden;
   display: flex;

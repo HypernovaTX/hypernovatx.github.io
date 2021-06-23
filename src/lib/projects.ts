@@ -1,6 +1,6 @@
 export const pList = [
   {
-    title: 'Arthur Guo\'s Personal Website',
+    title: 'Arthur Guo',
     meta: 'fe-agsite',
     type: 'Front End',
     life: 'Jun 2021 - NOW',

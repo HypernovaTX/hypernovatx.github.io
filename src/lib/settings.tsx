@@ -8,11 +8,14 @@ export const siteName =                 'Arthur Guo \'s Website';
 export const siteRoot =                 '';
 export const siteFooterText =           'Website designed by Arthur (Hypernova) Guo - 2021';
 export const mobileDevice =             /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i;
+export const phoneValidate =            /^\d{3}-\d{3}-\d{4}$/;
+// eslint-disable-next-line no-control-regex
+export const emailValidate =            /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 export const siteNavigation =           { list: [
   ['Home', siteRoot + '/#'],
   ['About Me', siteRoot + '/#/about'],
   ['Projects', siteRoot + '/#/projects'],
-  ['Contact', siteRoot + 'https://forms.gle/b2VFnmVQmQhZh48G8']
+  ['Contact', siteRoot + '/#/contact'] // Google Form - https://forms.gle/b2VFnmVQmQhZh48G8
 ] };
 
 // Home page
@@ -50,15 +53,15 @@ export const homeSettings = {
 export const aboutSettings = {
   title:              'Who I am?',
   landerImg:          require('../resources/img/arthurguo.jpg'),
-  paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with a clear goal: to show the world what I can build. Creativity and problem solving is my bread and butter.',
-  paragraph2:         'At a young age, I always wanted to turn my imagination into reality. In my earlier days, I started drawing to express myself. During my high school years (2007 - 2011), I started creating games as a hobby. Eventually, I need to build websites for my games, so I learned the basics around early 2010s. I then moved on to build apps for mobile phones and learned many new things. I wanted to become a developer so I started to learn new languages and tools the past few years. Most noteably JavaScript, TypeScript, PHP, React, and MySQL.',
+  paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with one objective: to learn new things everyday. Creativity and problem solving is my bread and butter.',
+  paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I made. When I worked for a web hosting company, I learned some programming while fixing customer\'s websites. After HostGator, I worked in several coding side projects from my employers. While off the clock, I took action and build several website for clients. My current objective is to become a full-time front end developer.',
 
   buttonText:         'Check out my projects!',
   buttonUrl:          siteNavigation.list[2][1],
   skillTitle:         'Skills',
   skillList:          [
     {
-      title: 'Front End Development',
+      title: 'Front End Web / App Development',
       meta: 'front-end',
       image: require('../resources/img/icon-frontend.png'),
       summary: 'Since 2012, I have experimented with HTML/CSS and JavaScript to showcase the games I\'ve built. Around 2017, I started doing some freelance projects by modifying existing WordPress themes. I then moved on to React and Typescript in mid 2020.',
@@ -91,5 +94,33 @@ export const aboutSettings = {
 // Projects page
 export const projectSettings = {
   title:              'Projects',
-  summary:            'Here are a list of my notable projects I have built in the past.',
+  summary:            'Here are a list of notable projects I have built in the past.',
+}
+
+// Contact page
+export const contactSettings = {
+  title:              'Contact Me',
+  summary:            'If you\'re interested to hire me, please let me know! I am in Plano, TX but open to remote works.',
+
+
+  avaiable:           '9:00 AM - 5:00 PM (US Central Time)',
+  github:             'https://github.com/hypernovatx',
+  linkedin:           'https://www.linkedin.com/in/arthur-guo-a59346148/',
+  notice:             'Feel free to contact me for any business opportunities! To reduce SPAM, I hid my contact information in this site. When you\'re filling out the forms, please understand that it can only take phone numbers in US / Canada since I cannot make calls outside of +1 country code.',
+
+  formName: { label: 'Full Name', name: 'name', },
+  formEmail:  { label: 'Email Address', name: 'email', },
+  formPhone: { label: 'Phone Number',  name: 'phone', },
+  formCompany: { label: 'Company',  name: 'company', },
+  formMessage: { label: 'Your Messages', name: 'message', },
+
+  errorMsg: {
+    nameEmpty: '"Full Name" cannot be left blank!',
+    emailEmpty: '"Email Address" cannot be left blank!',
+    emailInvalid: 'Email address is not valid!',
+    phoneEmpty: '"Phone Number" cannot be left blank!',
+    phoneInvalid: 'Your phone number is not correct! US / Canada numbers only!',
+    companyEmpty: '"Company" cannot be left blank!',
+    messageEmpty: '"Your Messages" cannot be left blank!',
+  }
 }

@@ -3,8 +3,6 @@ import { projectSettings } from '../../lib/settings';
 import { pList } from '../../lib/projects';
 import { XY } from '../../lib/types'
 
-
-
 export default class templateProjects {
   scroll: XY;
 

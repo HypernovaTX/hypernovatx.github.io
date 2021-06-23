@@ -8,6 +8,7 @@ import { HashRouter as Router, Switch, Route, HashRouter } from 'react-router-do
 import Home from './components/home';
 import About from './components/about';
 import Projects from './components/projects';
+import Contact from './components/contact';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
           <Route exact path="/"><Home/></Route> {/* HOME */}
           <Route exact path="/about"><About/></Route> {/* ABOUT */}
           <Route exact path="/projects"><Projects/></Route> {/* PROJECTS */}
+          <Route exact path="/contact"><Contact/></Route> {/* PROJECTS */}
         </Switch>
       </Router>
     </HashRouter>
