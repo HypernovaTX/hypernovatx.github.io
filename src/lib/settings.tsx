@@ -11,6 +11,9 @@ export const mobileDevice =             /Android|webOS|iPhone|iPad|iPod|BlackBer
 export const phoneValidate =            /^\d{3}-\d{3}-\d{4}$/;
 // eslint-disable-next-line no-control-regex
 export const emailValidate =            /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+export const emailJsKey =               'user_8FMH1Rt1nCasGQZejbl6u';
+export const emailJsService =           'service_36bjcuv';
+export const emailJsTemplate =          'template_n47zplu';
 export const siteNavigation =           { list: [
   ['Home', siteRoot + '/#'],
   ['About Me', siteRoot + '/#/about'],
@@ -106,7 +109,7 @@ export const contactSettings = {
   avaiable:           '9:00 AM - 5:00 PM (US Central Time)',
   github:             'https://github.com/hypernovatx',
   linkedin:           'https://www.linkedin.com/in/arthur-guo-a59346148/',
-  notice:             'Feel free to contact me for any business opportunities! To reduce SPAM, I hid my contact information in this site. When you\'re filling out the forms, please understand that it can only take phone numbers in US / Canada since I cannot make calls outside of +1 country code.',
+  notice:             'To reduce SPAM, I hid my contact information in this site. When you\'re filling out the forms, please understand that it can only take phone numbers in US / Canada since I cannot make calls outside of +1 country code.',
 
   formName: { label: 'Full Name', name: 'name', },
   formEmail:  { label: 'Email Address', name: 'email', },
@@ -121,4 +124,8 @@ export const contactSettings = {
   errPhoneInvalid: 'Your phone number is not correct! US / Canada numbers only!',
   errCompanyEmpty: '"Company" cannot be left blank!',
   errMessageEmpty: '"Your Messages" cannot be left blank!',
+
+  resetDialogue: 'Are you sure you want to reset the entire contact form?',
+
+  infoSVG: 'M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z',
 }

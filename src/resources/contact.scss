@@ -56,16 +56,62 @@ section.contact {
   overflow: hidden;
   display: flex;
   color: $color-white;
+  flex-direction: column;
+  align-items: center;
 
   form {
-    margin: 2em 4em;
+    margin: 4em 4em;
     min-width: 50vw;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 1em 2em;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
+    transition: 500ms ease-out transform, 500ms linear background-color;
+    transform: translate(0px, 0px);
+
+    &:focus-within, &:hover {
+      background: rgba(255, 255, 255, 0.75);
+      transform: translate(0px, -8px) scale(105%, 105%);
+      box-shadow: 0px 8px 32px rgba(0, 0, 0, 1);
+    }
 
     div {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+
+      &:last-child { flex-direction: row; }
+
+      label {
+        color: $color-black;
+        margin: 0.5em 0 0.25em;
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+
+      input[type="text" i], input[type="email" i], input[type="phone" i], textarea {
+        padding: 0.5em 1em;
+        border: 3px solid $color-accent;
+        background: rgba(255, 255, 255, 0.5);
+        transition: 1000ms linear all;
+        font-size: 1.25em;
+        color: $color-black;
+        font-family: 'Roboto';
+
+        &:focus {
+          background: #FFF;
+        }
+
+        &:disabled {
+          background: #AAA;
+          color: #444;
+          border: 3px solid #444;
+          cursor: not-allowed;
+        }
+      }
+
+      textarea {
+        font-size: 1.25em;
+      }
 
       span {
         background-color: rgb(226, 38, 38);
@@ -73,16 +119,140 @@ section.contact {
         color: $color-white;
         transition: 500ms ease-out all;
         text-shadow: 2px 2px 2px #000;
+        border-radius: 0 0 1em 1em;
+        margin-bottom: 1em;
 
         &.ok {
           padding: 0em 0.5em;
+          box-shadow: 0 0 0 #000;
           height: 0em;
         }
         &.error {
           padding: 0.25em 0.5em;
+          box-shadow: 0 4px 2px -2px #000;
           height: 1.5em;
         }
       }
+
+      input[type="submit" i], input[type="reset" i] {
+        display: inline-block;
+        margin: 0 0.5em 0.5em;
+        background: #CCC;
+        border: 3px solid $color-accent;
+        color: $color-accent;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.75em 1em;
+        font-size: 1.25rem;
+        transition: 200ms linear all, 1000ms linear opacity;
+        border-radius: 2em;
+        box-shadow: 0px 8px 4px -2px #000;
+        backdrop-filter: blur(8px);
+        transform: translate(0px, 0px);
+        text-shadow: none;
+        cursor: pointer;
+    
+        &:hover { background: #DDD; }
+        &:active {
+          background: #FFF;
+          transform: translate(0px, 2px);
+          box-shadow: 0px 4px 2px -1px #000;
+        }
+      }
+      input[type="submit" i] {
+        color: #FFF;
+        background: $color-accent;
+        &:hover, &:active { color: $color-accent; }
+      }
+
+      input[type="submit" i]:disabled, input[type="reset" i]:disabled {
+        background: #AAA;
+        border: 3px solid #444;
+        color: #444;
+        cursor: not-allowed;
+      }
     }
   }
+
+  .sidebar {
+    background-color: rgba($color-accent, 0.5);
+    color: #FFF;
+    margin: 4em;
+    margin-top: 0;
+    padding: 1em 2em;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
+    display: flex;
+    max-width: 50vw;
+    position: relative;
+    overflow: hidden;
+    transition: 500ms ease-out all;
+    
+    .svg {
+      position: absolute;
+      opacity: 0.25;
+      right: 32px;
+      bottom: 32px;
+      transition: 500ms ease-out all;
+
+      svg {
+        width: 80px;
+        height: 80px;
+        transition: 500ms ease-out all;
+        transform: rotateZ(0deg);
+      }
+      path { fill: #FFF; }
+    }
+
+    dd {
+      margin-inline-start: 0px;
+      font-size: 1.25em;
+      font-weight: 100;
+      display: grid;
+      margin-bottom: 1em;
+      text-shadow: 2px 2px 2px #000;
+
+      &:last-child {
+        display: flex;
+        margin-bottom: 0;
+      }
+
+      a {
+        font-size: 3em;
+        padding: 0.25em;
+        
+        svg { filter: drop-shadow(2px 2px 2px #000); }
+        .fa-linkedin path, .fa-github path {
+          fill: rgba(255, 255, 255, 0.5);
+          transition: 200ms linear all;
+        }
+
+        &:hover {
+          .fa-linkedin path, .fa-github path { fill: rgba(255, 255, 255, 1); } 
+        }
+      }
+    }
+
+    &:hover {
+      background-color: rgba($color-accent, 0.8);
+      transform: translate(0px, -8px) scale(105%, 105%);
+      box-shadow: 0px 8px 32px rgba(0, 0, 0, 1);
+  
+      .svg {
+        opacity: 0.1;
+        right: -64px;
+        bottom: -64px;
+        transform: rotateZ(-30deg);
+    
+        svg {
+          width: 256px;
+          height: 256px;
+        }
+        path { fill: #FFF; }
+      }
+    }
+  }
+
+  
+
+  
 }

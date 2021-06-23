@@ -1,6 +1,10 @@
 import { footer, navigation } from "./global";
 import { contactSettings as CS, emailValidate, phoneValidate } from '../../lib/settings';
 import { XY, contactForms, contactErr } from '../../lib/types';
+import { formatPhoneText } from '../../lib/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 enum f { name, email, phone, company, message };
 type functionForm = (input: contactForms) => void;
@@ -12,39 +16,49 @@ export default class templateContact {
   updateForms: functionForm;
   formErr: contactErr;
   updateErr: functionErr;
+  sendEmail: () => void;
+  sendStat: boolean;
+  reset: () => void;
   
   constructor(
     scr: XY, 
     forms: contactForms, 
     dispatch: functionForm, 
     formErr: contactErr, 
-    updateErr: functionErr
+    updateErr: functionErr,
+    sendEmail: () => void,
+    sendStat: boolean,
+    reset: () => void,
   ) {
     this.scroll = scr;
     this.forms = forms;
     this.updateForms = dispatch;
     this.formErr = formErr;
     this.updateErr = updateErr;
+    this.sendEmail = sendEmail;
+    this.sendStat = sendStat;
+    this.reset = reset;
   }
 
-  validateForm(form: number): void {
+  validateForm(form?: number): void {
     this.updateForms(this.forms);
+    const validateName = () => { this.formErr.name = (this.forms.name) ? 0 : 1; };
+    const validateEmail = () => { this.formErr.email = (this.forms.email) ? (this.forms.email.match(emailValidate) ? 0 : 2) : 1; };
+    const validatePhone = () => { this.formErr.phone = (this.forms.phone) ? (this.forms.phone.match(phoneValidate) ? 0 : 2) : 1; };
+    const validateCompany = () => { this.formErr.company = (this.forms.company) ? 0 : 1; };
+    const validateMessage = () => { this.formErr.message = (this.forms.message) ? 0 : 1; };
+
+    // If nothing is inserted, validate all of them;
+    if (!form) {
+      validateName(); validateEmail(); validatePhone(); validateCompany(); validateMessage(); return;
+    }
+
     switch (form) {
-      case f.name: // Ensure 'name' is not left blank
-        this.formErr.name = (this.forms.name) ? 0 : 1;
-        break;
-      case f.email: // Ensure 'email' is valid and not left blank
-        this.formErr.email = (this.forms.email) ? (this.forms.email.match(emailValidate) ? 0 : 2) : 1;
-        break;
-      case f.phone: // Ensure 'phone' is valid and not left blank
-        this.formErr.phone = (this.forms.phone) ? (this.forms.phone.match(phoneValidate) ? 0 : 2) : 1;
-        break;
-      case f.company: // Ensure 'company' is not left blank
-        this.formErr.company = (this.forms.company) ? 0 : 1;
-        break;
-      case f.message: // Ensure 'message' is not left blank
-        this.formErr.message = (this.forms.message) ? 0 : 1;
-        break;
+      case f.name: validateName(); break; // Ensure 'name' is not left blank
+      case f.email: validateEmail(); break; // Ensure 'email' is valid and not left blank        
+      case f.phone: validatePhone(); break; // Ensure 'phone' is valid and not left blank
+      case f.company: validateCompany(); break; // Ensure 'company' is not left blank
+      case f.message: validateMessage(); break; // Ensure 'message' is not left blank
     }
   }
 
@@ -59,7 +73,7 @@ export default class templateContact {
         if (this.formErr.email) { this.validateForm(form); }
         break;
       case f.phone: 
-        this.forms.phone = input; 
+        this.forms.phone = formatPhoneText(input); 
         if (this.formErr.phone) { this.validateForm(form); }
         break;
       case f.company: 
@@ -72,6 +86,12 @@ export default class templateContact {
         break;
     }
     this.updateForms(this.forms);
+  }
+
+  sendData(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    
   }
 
   landing(): JSX.Element {
@@ -90,14 +110,28 @@ export default class templateContact {
   }
 
   mainContact(): JSX.Element {
+    const infoSVG = (
+      <svg width = '160px' height = '160px' viewBox = '0 0 416.979 416.979'>
+	      <path d = { CS.infoSVG }/>
+      </svg>
+    );
     return (
       <section className = 'contact'>
         { this.contactForm() }
         <div className = 'sidebar'>
-          <dd><b>Notice: </b>{ CS.notice }</dd>
-          <dd><b>Availability: </b>{ CS.avaiable }</dd>
-          <dd><a href = {CS.github} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>GitHub</a></dd>
-          <dd><a href = {CS.linkedin} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>LinkedIn</a></dd>
+          <div className = 'svg'>{ infoSVG }</div>
+          <div className = 'no-svg'>
+            <dd><b>Notice: </b>{ CS.notice }</dd>
+            <dd><b>Availability: </b>{ CS.avaiable }</dd>
+            <dd>
+              <a href = {CS.github} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
+                <FontAwesomeIcon icon = { faGithub }/>
+              </a>
+              <a href = {CS.linkedin} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
+                <FontAwesomeIcon icon = { faLinkedin }/>
+              </a>
+            </dd>
+          </div>
         </div>
       </section>
     )
@@ -109,13 +143,14 @@ export default class templateContact {
     const err = this.formErr;
 
     return (
-      <form>
+      <form onSubmit = {(e) => { this.sendData(e) }} noValidate = { true }>
         <div>
           <label>{ CS.formName.label }</label>
           <input
             type = 'text'
             tabIndex = { 1 }
             required = { true }
+            disabled = { this.sendStat }
             value = { this.forms.name }
             className = { (this.formErr.name) ? 'error' : ' ' }
             onChange = { (e) => { this.updateInputs(e.target.value, f.name) } } 
@@ -129,6 +164,7 @@ export default class templateContact {
             type = 'email'
             tabIndex = { 2 }
             required = { true }
+            disabled = { this.sendStat }
             value = { this.forms.email } 
             className = { (this.formErr.email) ? 'error' : ' ' }
             onChange = { (e) => { this.updateInputs(e.target.value, f.email) } } 
@@ -145,6 +181,7 @@ export default class templateContact {
             type = 'phone'
             tabIndex = { 3 }
             required = { true }
+            disabled = { this.sendStat }
             value = { this.forms.phone } 
             className = { (this.formErr.phone) ? 'error' : ' ' }
             onChange = { (e) => { this.updateInputs(e.target.value, f.phone) } } 
@@ -161,6 +198,7 @@ export default class templateContact {
             type = 'text'
             tabIndex = { 4 }
             required = { true }
+            disabled = { this.sendStat }
             value = { this.forms.company } 
             className = { (this.formErr.company) ? 'error' : ' ' }
             onChange = { (e) => { this.updateInputs(e.target.value, f.company) } } 
@@ -171,14 +209,22 @@ export default class templateContact {
         <div>
           <label>{ CS.formMessage.label }</label>
           <textarea 
-            required = { true }
+            rows = { 5 }
             tabIndex = { 5 }
+            required = { true }
+            disabled = { this.sendStat }
             value = { this.forms.message } 
             className = { (this.formErr.message) ? 'error' : ' ' }
             onChange = { (e) => { this.updateInputs(e.target.value, f.message) } } 
             onBlur = { () => { this.validateForm(f.message) } }
           />
           { errorCite(CS.errMessageEmpty, this.formErr.message) }
+        </div>
+        <div>
+          <input type = 'submit' disabled = { this.sendStat } required = { true } onClick = { () => { this.validateForm() } }/>
+          <input type = 'reset' disabled = { this.sendStat } onClick = { () => { 
+            if (window.confirm(CS.resetDialogue)) { this.reset() }
+          } }/>
         </div>
       </form>
     )
@@ -196,12 +242,3 @@ export default class templateContact {
     </>)
   }
 }
-
-/**
- * FOOTNOTES
- * 
- * (1) - 
- * 
- * 
- * 
- */
