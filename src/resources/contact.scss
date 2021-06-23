@@ -167,6 +167,35 @@ section.contact {
         }
       }
 
+      &.recaptcha {
+        margin: 1em 0;
+        align-items: center;
+
+        span {
+          background-color: rgb(226, 38, 38);
+          overflow: hidden;
+          color: $color-white;
+          transition: 500ms ease-out all;
+          text-shadow: 2px 2px 2px #000;
+          border-radius: 1em;
+          margin-bottom: 1em;
+          width: 304px;
+  
+          &.ok {
+            margin-top: 0em;
+            padding: 0em 0.5em 0em;
+            box-shadow: 0 0 0 #000;
+            height: 0em;
+          }
+          &.error {
+            margin-top: 0.5em;
+            padding: 0.5em 0.5em 0em;
+            box-shadow: 0 4px 2px -2px #000;
+            height: 1.5em;
+          }
+        }
+      }
+
       input[type="submit" i], input[type="reset" i] {
         display: inline-block;
         margin: 0 0.5em 0.5em;

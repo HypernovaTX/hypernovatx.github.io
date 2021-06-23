@@ -11,6 +11,7 @@ type State = {
   err: contactErr;
   sending: boolean;
   scroll: XY;
+  recaptcha: boolean;
 }
 
 export default class Contact extends React.Component<Props, State> {
@@ -18,9 +19,10 @@ export default class Contact extends React.Component<Props, State> {
     super(p);
     this.state = {
       forms: { name: '', email: '',  phone: '', company: '', message: '' },
-      err: { name: 0, email: 0,  phone: 0, company: 0, message: 0 },
+      err: { name: 0, email: 0,  phone: 0, company: 0, message: 0, recaptcha: 0 },
       sending: false,
-      scroll: { x: 0, y: 0 }
+      scroll: { x: 0, y: 0 },
+      recaptcha: false,
     }
   }
 
@@ -41,7 +43,7 @@ export default class Contact extends React.Component<Props, State> {
     const payload = { ...forms }
     const send = () => { emailjs.send(emailJsService, emailJsTemplate, payload, '')
       .then((result) => {
-        if (result.text === 'OK') { alert(CS.successMsg); }
+        if (result.text === 'OK') { alert(CS.successMsg); this.resetForm(); }
         else { alert(CS.failMsg); }
         this.setState({ sending: false });
       }, (error) => {
@@ -57,14 +59,15 @@ export default class Contact extends React.Component<Props, State> {
   resetForm = (): void => {
     this.setState({
       forms: { name: '', email: '',  phone: '', company: '', message: '' },
-      err: { name: 0, email: 0,  phone: 0, company: 0, message: 0 }
+      err: { name: 0, email: 0,  phone: 0, company: 0, message: 0, recaptcha: 0 }
     })
   }
 
   render() {
-    const { forms, err, scroll, sending } = this.state;
+    const { forms, err, scroll, sending, recaptcha } = this.state;
     const updateForm = (input: contactForms) => { this.setState({ forms: input }) };
     const updateErr = (input: contactErr) => { this.setState({ err: input }) };
+    const updateRC = (input: boolean) => { this.setState({ recaptcha: input }) }
 
     const template = new templateContact(
       scroll, 
@@ -74,7 +77,9 @@ export default class Contact extends React.Component<Props, State> {
       updateErr, 
       this.sendEmail, 
       sending,
-      this.resetForm
+      this.resetForm,
+      recaptcha,
+      updateRC
     );
     return(template.output());
   }

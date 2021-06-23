@@ -14,6 +14,7 @@ export const emailValidate =            /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-
 export const emailJsKey =               'user_8FMH1Rt1nCasGQZejbl6u';
 export const emailJsService =           'service_36bjcuv';
 export const emailJsTemplate =          'template_n47zplu';
+export const recaptcha =                '6LcOflEbAAAAAM_V8jC05Id_iqz3UJBqNLtPlir0';
 export const siteNavigation =           { list: [
   ['Home', siteRoot + '/#'],
   ['About Me', siteRoot + '/#/about'],
@@ -123,6 +124,7 @@ export const contactSettings = {
   errPhoneInvalid: 'Your phone number is not correct! US / Canada numbers only!',
   errCompanyEmpty: '"Company" cannot be left blank!',
   errMessageEmpty: '"Your Messages" cannot be left blank!',
+  errRecaptcha: 'Please verify the reCAPTCHA form!',
 
   resetDialogue: 'Are you sure you want to reset the entire contact form?',
   successMsg: 'Thanks for the email! I will review your message and respond if interested!',

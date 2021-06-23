@@ -1,14 +1,17 @@
 import { footer, navigation } from "./global";
-import { contactSettings as CS, emailValidate, phoneValidate } from '../../lib/settings';
+import { contactSettings as CS, emailValidate, phoneValidate, recaptcha } from '../../lib/settings';
 import { XY, contactForms, contactErr } from '../../lib/types';
 import { formatPhoneText } from '../../lib/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import ReCAPTCHA from "react-google-recaptcha";
+import React from "react";
 
 
-enum f { name, email, phone, company, message };
+enum f { name, email, phone, company, message, recaptcha };
 type functionForm = (input: contactForms) => void;
 type functionErr = (input: contactErr) => void;
+type functionRC = (input: boolean) => void;
 
 export default class templateContact {
   scroll: XY;
@@ -19,6 +22,9 @@ export default class templateContact {
   sendEmail: () => void;
   sendStat: boolean;
   reset: () => void;
+  recaptcha: boolean;
+  updateRC: functionRC
+  recaptchaRef: React.RefObject<ReCAPTCHA>;
   
   constructor(
     scr: XY, 
@@ -29,6 +35,8 @@ export default class templateContact {
     sendEmail: () => void,
     sendStat: boolean,
     reset: () => void,
+    rc: boolean,
+    updateRC: functionRC
   ) {
     this.scroll = scr;
     this.forms = forms;
@@ -38,6 +46,9 @@ export default class templateContact {
     this.sendEmail = sendEmail;
     this.sendStat = sendStat;
     this.reset = reset;
+    this.recaptcha = rc;
+    this.updateRC = updateRC;
+    this.recaptchaRef = React.createRef();
   }
 
   validateForm(form?: number): void {
@@ -47,10 +58,11 @@ export default class templateContact {
     const validatePhone = () => { this.formErr.phone = (this.forms.phone) ? (this.forms.phone.match(phoneValidate) ? 0 : 2) : 1; };
     const validateCompany = () => { this.formErr.company = (this.forms.company) ? 0 : 1; };
     const validateMessage = () => { this.formErr.message = (this.forms.message) ? 0 : 1; };
+    const validateRecaptcha = () => { this.formErr.recaptcha = (this.recaptcha) ? 0 : 1; };
 
     // If nothing is inserted, validate all of them;
     if (typeof form === 'undefined') {
-      validateName(); validateEmail(); validatePhone(); validateCompany(); validateMessage(); return;
+      validateName(); validateEmail(); validatePhone(); validateCompany(); validateMessage(); validateRecaptcha(); return;
     }
 
     switch (form) {
@@ -59,6 +71,7 @@ export default class templateContact {
       case f.phone: validatePhone(); break; // Ensure 'phone' is valid and not left blank
       case f.company: validateCompany(); break; // Ensure 'company' is not left blank
       case f.message: validateMessage(); break; // Ensure 'message' is not left blank
+      case f.recaptcha: this.formErr.recaptcha = 0; break; // Ensure 'recaptcha' is verified
     }
   }
 
@@ -90,8 +103,11 @@ export default class templateContact {
 
   sendData(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
-    
+    if (this.recaptcha) { this.sendEmail(); }
+    if (this.recaptchaRef && this.recaptchaRef.current) {
+      this.recaptchaRef.current.reset();
+      this.updateRC(false);
+    }
   }
 
   landing(): JSX.Element {
@@ -223,10 +239,28 @@ export default class templateContact {
           />
           { errorCite(CS.errMessageEmpty, this.formErr.message) }
         </div>
+        <div className = 'recaptcha'>
+          <ReCAPTCHA
+            sitekey = { recaptcha }
+            ref = { this.recaptchaRef }
+            onChange = { () => { 
+              this.validateForm(f.recaptcha);
+              this.updateRC(true); 
+            } }
+            onExpired = { () => { this.updateRC(false) } }
+          />
+          { errorCite(CS.errRecaptcha, this.formErr.recaptcha) }
+        </div>
         <div>
           <input type = 'submit' disabled = { this.sendStat } required = { true } onClick = { () => { this.validateForm() } }/>
           <input type = 'reset' disabled = { this.sendStat } onClick = { () => { 
-            if (window.confirm(CS.resetDialogue)) { this.reset() }
+            if (window.confirm(CS.resetDialogue)) { 
+              if (this.recaptchaRef && this.recaptchaRef.current) {
+                this.recaptchaRef.current.reset();
+                this.updateRC(false);
+              }
+              this.reset()
+            }
           } }/>
         </div>
       </form>
