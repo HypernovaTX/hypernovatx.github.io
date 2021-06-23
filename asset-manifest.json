@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.4a391af4.chunk.css",
-    "main.js": "/static/js/main.d24445bc.chunk.js",
-    "main.js.map": "/static/js/main.d24445bc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.fedd3e52.js",
-    "runtime-main.js.map": "/static/js/runtime-main.fedd3e52.js.map",
-    "static/js/2.7056ad9e.chunk.js": "/static/js/2.7056ad9e.chunk.js",
-    "static/js/2.7056ad9e.chunk.js.map": "/static/js/2.7056ad9e.chunk.js.map",
-    "static/js/3.c39677ab.chunk.js": "/static/js/3.c39677ab.chunk.js",
-    "static/js/3.c39677ab.chunk.js.map": "/static/js/3.c39677ab.chunk.js.map",
+    "main.css": "/static/css/main.b032571a.chunk.css",
+    "main.js": "/static/js/main.c2de6bf7.chunk.js",
+    "main.js.map": "/static/js/main.c2de6bf7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.da14db12.js",
+    "runtime-main.js.map": "/static/js/runtime-main.da14db12.js.map",
+    "static/js/2.a912edf5.chunk.js": "/static/js/2.a912edf5.chunk.js",
+    "static/js/2.a912edf5.chunk.js.map": "/static/js/2.a912edf5.chunk.js.map",
+    "static/js/3.4165ee3d.chunk.js": "/static/js/3.4165ee3d.chunk.js",
+    "static/js/3.4165ee3d.chunk.js.map": "/static/js/3.4165ee3d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.4a391af4.chunk.css.map": "/static/css/main.4a391af4.chunk.css.map",
-    "static/js/2.7056ad9e.chunk.js.LICENSE.txt": "/static/js/2.7056ad9e.chunk.js.LICENSE.txt",
+    "static/css/main.b032571a.chunk.css.map": "/static/css/main.b032571a.chunk.css.map",
+    "static/js/2.a912edf5.chunk.js.LICENSE.txt": "/static/js/2.a912edf5.chunk.js.LICENSE.txt",
     "static/media/ag.jpg": "/static/media/ag.f9e27371.jpg",
     "static/media/arthurguo.jpg": "/static/media/arthurguo.3b209473.jpg",
     "static/media/about.scss": "/static/media/pattern.7eccdfcc.svg",
@@ -21,14 +21,15 @@
     "static/media/projects.scss": "/static/media/interchange.30d515df.jpg",
     "static/media/jjpool.jpg": "/static/media/jjpool.59818edb.jpg",
     "static/media/index.scss": "/static/media/squada-one.819b05bf.ttf",
+    "static/media/contact.scss": "/static/media/road.e34311f7.jpg",
     "static/media/removu.jpg": "/static/media/removu.198adece.jpg",
     "static/media/rtg2.jpg": "/static/media/rtg2.f7836e98.jpg",
     "static/media/tgrb.jpg": "/static/media/tgrb.af474956.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fedd3e52.js",
-    "static/js/2.7056ad9e.chunk.js",
-    "static/css/main.4a391af4.chunk.css",
-    "static/js/main.d24445bc.chunk.js"
+    "static/js/runtime-main.da14db12.js",
+    "static/js/2.a912edf5.chunk.js",
+    "static/css/main.b032571a.chunk.css",
+    "static/js/main.c2de6bf7.chunk.js"
   ]
 }
