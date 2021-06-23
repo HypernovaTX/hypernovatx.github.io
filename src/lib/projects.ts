@@ -32,7 +32,7 @@ export const pList = [
       'PHP emailer',
     ],
     url: [
-      { name: 'Production', link: 'https://jjpoolsnpatios.com/' },
+      { name: 'Live Site', link: 'https://jjpoolsnpatios.com/' },
       { name: 'Source', link: 'https://github.com/HypernovaTX/JJPoolsNPatios' },
     ]
   },
@@ -52,7 +52,7 @@ export const pList = [
       'Better understanding of OOP in PHP'
     ],
     url: [
-      { name: 'Production', link: 'https://dfwmobilerepair.com/' },
+      { name: 'Live Site', link: 'https://dfwmobilerepair.com/' },
       { name: 'Source (front end only)', link: 'https://github.com/HypernovaTX/DFWMobileRepair' },
     ]
   },
@@ -104,7 +104,7 @@ export const pList = [
       'Handling a large database',
     ],
     url: [
-      { name: 'Production', link: 'https://mfgg.net' },
+      { name: 'Live Site', link: 'https://mfgg.net' },
       { name: 'Source (incomplete)', link: 'https://drive.google.com/file/d/1gSTJfM8KnSeYsZ4660EoDFMlx3rPvCyr/view?usp=sharing' },
     ]
   },
@@ -115,7 +115,7 @@ export const pList = [
     life: 'Apr 2018 - Mar 2019',
     image: require('../resources/img/proj/removu.jpg'),
     tools: ['WordPress', 'PHP', 'JavaScript'],
-    description: 'Removu is a Korean based camera company. The website is built on WordPress and is hosted on an Ubuntu based AWS server. I have helped the company by maintaing the site and redesign its UI',
+    description: 'Removu is a Korean based camera company. The website is built on WordPress and is hosted on an Ubuntu based AWS server. I have helped the company by maintaing the site and redesign its UI.\n\nThe source is in the company network and unfortunately the company is no longer is business.',
     learned: [
       'Optimization of WordPress plugins',
       'Some knowledge on JavaScript',
@@ -135,6 +135,7 @@ export const pList = [
     learned: [],
     url: [
       { name: 'Reupload', link: 'http://greenroom.byethost8.com/' },    
+      { name: 'Source', link: 'https://drive.google.com/file/d/1w9qGQiiTSWYTTe5PgU__vln0OQCXFoQi/view?usp=sharing' }
     ]
   },
   {

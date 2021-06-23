@@ -54,14 +54,14 @@ export const aboutSettings = {
   title:              'Who I am?',
   landerImg:          require('../resources/img/arthurguo.jpg'),
   paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with one objective: to learn new things everyday. Creativity and problem solving is my bread and butter.',
-  paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I made. When I worked for a web hosting company, I learned some programming while fixing customer\'s websites. After HostGator, I worked in several coding side projects from my employers. While off the clock, I took action and build several website for clients. My current objective is to become a full-time front end developer.',
+  paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I\'ve made. When I worked for HostGator, I learned some programming while fixing customer\'s websites. After HostGator, I worked in several coding side projects from my employers. While I\'m off the clock, I took action and build several website for my clients.',
 
   buttonText:         'Check out my projects!',
   buttonUrl:          siteNavigation.list[2][1],
   skillTitle:         'Skills',
   skillList:          [
     {
-      title: 'Front End Web / App Development',
+      title: 'Front End Development',
       meta: 'front-end',
       image: require('../resources/img/icon-frontend.png'),
       summary: 'Since 2012, I have experimented with HTML/CSS and JavaScript to showcase the games I\'ve built. Around 2017, I started doing some freelance projects by modifying existing WordPress themes. I then moved on to React and Typescript in mid 2020.',
@@ -71,22 +71,22 @@ export const aboutSettings = {
       title: 'Back End Development',
       meta: 'back-end',
       image: require('../resources/img/icon-backend.png'),
-      summary: 'I first learned back end when I was working on an app in mid-2016 with PHP. Around early 2019, I helped maintaining a legacy back end PHP code base for a gaming website that was made in 2006. In mid 2020, while I was learning React, I learned how to write backend JS with Express.',
+      summary: 'I first learned back end when I was working on an app in mid-2016 with PHP. Around early 2019, I helped maintaining a legacy back end PHP code base for a website that was made in 2006. In mid 2020, while I was learning React, I learned how to write backend JS with Express.',
       tags: ['PHP', 'Express'], 
     }, 
     {
       title: 'Game Development',
       meta: 'game-dev',
       image: require('../resources/img/icon-gamedev.png'),
-      summary: 'Game development is the initial path I took to learn programming. Back in 2007, I learned how to build games with Game Maker 6.1 and built dozens of game project. I have also published some of my projects to the App Store, Google Play Store, and Windows Phone Store.', 
-      tags: ['Game Maker 6.1 - 8.1', 'Game Maker: Studio 1.4', 'GLSL'],
+      summary: 'Game development is the initial path I took to learn programming. I learned how to build games with GML and built dozens of game project since 2007.', 
+      tags: ['Game Maker: Studio', 'GML', 'GLSL'],
     },
     {
       title: 'Others',
       meta: 'others',
       image: require('../resources/img/icon-others.png'),
       summary: 'I have various of other skills under my belt I learned from hobbies, past work experiences, etc.',
-      tags: ['GNU/Linux (CentOS, Debian)', 'DNS', 'Apache', 'Graphic Design', 'Hardware Repair', 'Communications', 'Mandarin Chinese (中文 - 普通话)'],
+      tags: ['GNU/Linux', 'DNS', 'Apache', 'Adobe CS', 'Communications', 'Mandarin Chinese (中文 - 普通话)'],
     }, 
   ]
 };
@@ -114,13 +114,11 @@ export const contactSettings = {
   formCompany: { label: 'Company',  name: 'company', },
   formMessage: { label: 'Your Messages', name: 'message', },
 
-  errorMsg: {
-    nameEmpty: '"Full Name" cannot be left blank!',
-    emailEmpty: '"Email Address" cannot be left blank!',
-    emailInvalid: 'Email address is not valid!',
-    phoneEmpty: '"Phone Number" cannot be left blank!',
-    phoneInvalid: 'Your phone number is not correct! US / Canada numbers only!',
-    companyEmpty: '"Company" cannot be left blank!',
-    messageEmpty: '"Your Messages" cannot be left blank!',
-  }
+  errNameEmpty: '"Full Name" cannot be left blank!',
+  errEmailEmpty: '"Email Address" cannot be left blank!',
+  errEmailInvalid: 'Email address is not valid!',
+  errPhoneEmpty: '"Phone Number" cannot be left blank!',
+  errPhoneInvalid: 'Your phone number is not correct! US / Canada numbers only!',
+  errCompanyEmpty: '"Company" cannot be left blank!',
+  errMessageEmpty: '"Your Messages" cannot be left blank!',
 }

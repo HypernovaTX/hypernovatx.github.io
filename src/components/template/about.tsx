@@ -98,7 +98,7 @@ export default class templateAbout {
   // Will be manually called via "About" component
   output(): JSX.Element {
     return (<>
-      { navigation() }
+      { navigation(this.scroll) }
       { this.landing() }
       { this.skills() }
       { footer() }

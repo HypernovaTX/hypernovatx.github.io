@@ -1,17 +1,35 @@
+import React from 'react';
 import templateContact from './template/contact';
 import '../resources/contact.scss';
-import useScrollPosition from '../hooks/scroll';
-import { useState } from "react";
+import { XY, contactForms, contactErr } from '../lib/types';
 
-export default function Projects() {
-  const defaultForms = { name: '', email: '',  phone: '', company: '', message: '' };
-  const defaultErr = { name: 0, email: 0,  phone: 0, company: 0, message: 0 };
-  let [forms, updateForm] = useState(defaultForms);
-  let [formErr, updateErr] = useState(defaultErr);
+type Props = {};
+type State = {
+  forms: contactForms;
+  err: contactErr;
+  sending: boolean;
+  scroll: XY;
+}
 
-  const sendEmail = () => {};
+export default class Contact extends React.Component<Props, State> {
+  constructor(p: Props) {
+    super(p);
+    this.state = {
+      forms: { name: '', email: '',  phone: '', company: '', message: '' },
+      err: { name: 0, email: 0,  phone: 0, company: 0, message: 0 },
+      sending: false,
+      scroll: { x: 0, y: 0 }
+    }
+  }
 
-  const scrollPos = useScrollPosition();
-  const template = new templateContact(scrollPos, forms, updateForm, formErr, updateErr);
-  return(template.output());
+  sendEmail() {};
+
+  render() {
+    const { forms, err, scroll } = this.state;
+    const updateForm = (input: contactForms) => { this.setState({ forms: input }) };
+    const updateErr = (input: contactErr) => { this.setState({ err: input }) };
+
+    const template = new templateContact(scroll, forms, updateForm, err, updateErr);
+    return(template.output());
+  }
 }

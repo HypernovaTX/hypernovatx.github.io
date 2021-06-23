@@ -57,7 +57,32 @@ section.contact {
   display: flex;
   color: $color-white;
 
-  form.main {
+  form {
     margin: 2em 4em;
+    min-width: 50vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1em 2em;
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        background-color: rgb(226, 38, 38);
+        overflow: hidden;
+        color: $color-white;
+        transition: 500ms ease-out all;
+        text-shadow: 2px 2px 2px #000;
+
+        &.ok {
+          padding: 0em 0.5em;
+          height: 0em;
+        }
+        &.error {
+          padding: 0.25em 0.5em;
+          height: 1.5em;
+        }
+      }
+    }
   }
 }

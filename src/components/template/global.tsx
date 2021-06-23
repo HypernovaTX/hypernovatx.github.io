@@ -1,15 +1,13 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /**
  * This is a library of the globally used templates
  */
-import useScrollPosition from '../../hooks/scroll';
 import { changeRoute } from '../../lib/actions';
 import { siteNavigation, siteFooterText } from '../../lib/settings';
 import Wave from 'react-wavify';
+import { XY } from '../../lib/types';
 
 // Top side navigation
-export function navigation(): JSX.Element {
-  const scrollPos = useScrollPosition();
+export function navigation(scrollPos: XY): JSX.Element {
   const points = (window.innerWidth > 480) ? 8 : 4;
   const topWaveName = (scrollPos.y > 160) ? 'active' : '';
   
