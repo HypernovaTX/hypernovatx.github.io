@@ -2,7 +2,7 @@ import templateAbout from './template/about';
 import '../resources/about.scss';
 import useScrollPosition from '../hooks/scroll';
 import { useState } from 'react';
-import addX from '../hooks/addx';
+import useXPos from '../hooks/addx';
 
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
 
   // This function constantly rerender React
   // It fixes the bug for the mobile menu not updating until other events
-  addX();
+  useXPos();
    
   const scrollPos = useScrollPosition();
   const template = new templateAbout(scrollPos, aStep, updateAStep);

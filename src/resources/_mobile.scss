@@ -1,4 +1,5 @@
-// Mobile theme
+// SCSS for mobile theme
+
 @import './_presets';
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
@@ -74,9 +75,16 @@
   }
 }
 
+/* 
+ * Reason why I use "!important" on a lot of codes here is because
+ * All other stylesheet were called above @media so they are not overriding
+ * the original (desktop) CSS. I did found a cleaner solution after I 
+ * finished the project and I will fix these later on.
+ */
+
 @media only screen and (max-width: 1080px) {
-  section.projects .proj {
-    max-width: 100% !important;
+  body section.projects .proj {
+    max-width: 100%;
 
     img {
       width: 240px;
@@ -84,15 +92,15 @@
     }
 
     .right {
-      padding: 0.5em 1.5em !important;
-      padding-bottom: 1em !important;
+      padding: 0.5em 1.5em;
+      padding-bottom: 1em;
       
-      h2 { margin: 0.5em 0.5em 0.5em !important; }
-      dd { margin: 0em 1em !important; }
+      h2 { margin: 0.5em 0.5em 0.5em; }
+      dd { margin: 0em 1em; }
     }
   }
 
-  section.contact form, section.contact .sidebar { min-width: 70vw !important; }
+  body section.contact form, section.contact .sidebar { min-width: 70vw !important; }
 }
 
 @media only screen and (max-width: 800px) {
@@ -156,7 +164,7 @@
     }
 
     &:hover {
-      transform: scale(105%, 105%) !important;
+      transform: scale(102%, 102%) !important;
       background: $color-accent;
     }
 
@@ -187,7 +195,7 @@
     }
 
     form:focus-within, form:hover {
-      transform: translate(0px, -4px) scale(103%, 103%);
+      transform: translate(0px, -2px) scale(102%, 102%);
     }
 
     input[type=submit i], input[type=reset i] {
@@ -349,7 +357,7 @@
       height: 120px !important;
     }
 
-    &:hover { transform: scale(102%, 102%) !important; }
+    &:hover { transform: scale(101%, 101%) !important; }
     &:hover img { transform: rotateZ(3deg) !important; }
     &:nth-child(2n):hover img { transform: rotateZ(-3deg) !important; }
   }

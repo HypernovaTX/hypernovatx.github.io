@@ -36,7 +36,7 @@ export default class Contact extends React.Component<Props, State> {
     window.addEventListener('scroll', this.handleScroll); 
     this.setState({ scroll: { x: window.pageXOffset, y: window.pageYOffset } });
 
-    // 
+    // This is purposely made so it rerender React to fix the mobile navigation not showing up
     this.bugFixTimer = setInterval(() => { this.setState({ bugfix: '' }) }, 50);
     
     // Emailer API

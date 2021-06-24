@@ -28,18 +28,8 @@ export default class templateProjects {
 
   list(): JSX.Element {
     // Map a list of "What I have learned:"
-    const iLearned = (_in: string[], _no: number) => {
-      if (_in.length === 0) { return <></>; }
-
-      return (<dd>
-        <b>What I have learned:</b>
-        <ul>
-          { _in.map((item, _id) => 
-            <li key = { `index_${_no + _id}`} >{ item }</li>
-          ) }
-        </ul>
-      </dd>);
-    };
+    // UPDATE - I commented this out because it is unnecessary, see footnote (1)
+    
 
     // Map an array of Button elements for URLs for each of the projects
     const urlList = (_urlLs: { name: string, link: string }[], _no: number) => {
@@ -59,7 +49,7 @@ export default class templateProjects {
           <dd><b>Date: </b>{ item.life }</dd>
           <dd><b>Tools: </b>{ item.tools.join(', ') }</dd>
           <br/><dd>{ item.description }</dd><br/>
-          { iLearned(item.learned, index) }
+          {/*(1)*/}
           { urlList(item.url, index) }
         </div>
       </div>
@@ -89,8 +79,21 @@ export default class templateProjects {
 /**
  * FOOTNOTES
  * 
- * (1) - 
+ * (1) - I removed "What I have learned" because it bring more questions than answers
  * 
+ * const iLearned = (_in: string[], _no: number) => {
+ *    if (_in.length === 0) { return <></>; }
+ *
+ *    return (<dd>
+ *      <b>What I have learned:</b>
+ *      <ul>
+ *        { _in.map((item, _id) => 
+ *          <li key = { `index_${_no + _id}`} >{ item }</li>
+ *        ) }
+ *      </ul>
+ *    </dd>);
+ *  };
  * 
+ * { iLearned(item.learned, index) }
  * 
  */

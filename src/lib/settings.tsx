@@ -24,7 +24,7 @@ export const siteNavigation =           { list: [
 
 // Home page
 export const homeSettings = {
-  title:              'Hi! My name is Arthur Guo! I am a developer!',
+  title:              'Hi! My name is Arthur Guo! I am a web developer!',
   buttonText:         'Who I am exactly?',
   buttonUrl:          siteNavigation.list[1].url,
   landerImg:          '/resources/img/mountain-base.jpg',
@@ -56,7 +56,7 @@ export const homeSettings = {
 // About page
 export const aboutSettings = {
   title:              'Who I am?',
-  landerImg:          require('../resources/img/arthurguo.jpg'),
+  landerImg:          require('../resources/img/AG.jpg'),
   paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with one objective: to learn new things everyday. Creativity and problem solving are my bread and butter.',
   paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I\'ve made. When I worked for HostGator, I learned some programming while fixing customers\' websites. After HostGator, I took on several programming side-jobs. While off the clock, I took an initiative and built several websites for various clients.',
 
