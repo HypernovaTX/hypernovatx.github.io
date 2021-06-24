@@ -5,7 +5,6 @@ import { Animate, AnimateGroup } from 'react-simple-animate';
 import Typewriter from 'typewriter-effect';
 import { changeRoute } from '../../lib/actions';
 
-
 type aStepFunc = React.Dispatch<React.SetStateAction<boolean>>;
 
 export default class templateAbout {

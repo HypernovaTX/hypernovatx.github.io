@@ -1,7 +1,7 @@
 // This is used for global actions
-export function changeRoute(url: string): void {
-  window.scrollTo(0, 0);
-  window.location.href = url;
+export function changeRoute(link: string): void {
+  window.startT();
+  setTimeout( () => window.location.href = link, 600);
 }
 
 export function formatPhoneText(value: string): string {

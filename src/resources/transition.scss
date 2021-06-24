@@ -1,0 +1,12 @@
+@import './_presets';
+
+.mouseContainer {
+  width: 1em;
+  height: 1em;
+  background: $color-accent;
+  position: fixed;
+  display: flex;
+  z-index: 99;
+  transition: 500ms ease-in-out all;
+  border-radius: 50%;
+}

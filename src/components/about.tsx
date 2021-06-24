@@ -3,6 +3,7 @@ import '../resources/about.scss';
 import useScrollPosition from '../hooks/scroll';
 import { useState } from 'react';
 
+
 export default function About() {
   const [aStep, updateAStep] = useState(false);
 
