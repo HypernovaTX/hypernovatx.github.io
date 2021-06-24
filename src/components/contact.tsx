@@ -12,9 +12,12 @@ type State = {
   sending: boolean;
   scroll: XY;
   recaptcha: boolean;
+  bugfix: '';
 }
 
 export default class Contact extends React.Component<Props, State> {
+  bugFixTimer: NodeJS.Timeout | null ;
+
   constructor(p: Props) {
     super(p);
     this.state = {
@@ -23,16 +26,29 @@ export default class Contact extends React.Component<Props, State> {
       sending: false,
       scroll: { x: 0, y: 0 },
       recaptcha: false,
+      bugfix: '',
     }
+    this.bugFixTimer = null;
   }
 
   public componentDidMount() { 
+    // Scroll listener
     window.addEventListener('scroll', this.handleScroll); 
     this.setState({ scroll: { x: window.pageXOffset, y: window.pageYOffset } });
+
+    // 
+    this.bugFixTimer = setInterval(() => { this.setState({ bugfix: '' }) }, 50);
+    
+    // Emailer API
     initEmailJS(emailJsKey);
   }
 
-  public componentWillUnmount() { window.removeEventListener('scroll', this.handleScroll); }
+  public componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    if (this.bugFixTimer !== null) {
+      clearInterval(this.bugFixTimer)
+    }
+  }
 
   private handleScroll = () => {
     this.setState({ scroll: { x: window.pageXOffset, y: window.pageYOffset } });

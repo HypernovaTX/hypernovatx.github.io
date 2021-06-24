@@ -12,9 +12,10 @@ $color-transparent: rgba(0, 0, 0, 0);
 
 // Used for navigation menu entries
 $nav-item: (
-  "&": rgba(255, 255, 255, 0),
-  "&:hover": rgba(255, 255, 255, 0.2),
-  "&:active": rgba(255, 255, 255, 0.4),
+  "&": $color-white,
+  "&:hover": $color-accent2,
+  "&:active": $color-accent,
+  "&.select": $color-white,
 );
 
 // Others

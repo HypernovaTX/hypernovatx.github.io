@@ -272,7 +272,7 @@ export default class templateContact {
   // Will be manually called via "Projects" component
   output(): JSX.Element {
     return (<>
-      { navigation(this.scroll) }
+      { navigation(this.scroll, 3) }
       { this.landing() }
       { this.mainContact() }
       { footer() }

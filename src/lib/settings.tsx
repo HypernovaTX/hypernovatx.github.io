@@ -16,17 +16,17 @@ export const emailJsService =           'service_36bjcuv';
 export const emailJsTemplate =          'template_n47zplu';
 export const recaptcha =                '6LcOflEbAAAAAM_V8jC05Id_iqz3UJBqNLtPlir0';
 export const siteNavigation =           { list: [
-  ['Home', siteRoot + '/#'],
-  ['About Me', siteRoot + '/#/about'],
-  ['Projects', siteRoot + '/#/projects'],
-  ['Contact', siteRoot + '/#/contact'] // Google Form - https://forms.gle/b2VFnmVQmQhZh48G8
+  { name: 'Home', url: siteRoot + '/#' },
+  { name: 'About Me', url: siteRoot + '/#/about' },
+  { name: 'Projects', url: siteRoot + '/#/projects' },
+  { name: 'Contact', url: siteRoot + '/#/contact' }, // Google Form - https://forms.gle/b2VFnmVQmQhZh48G8
 ] };
 
 // Home page
 export const homeSettings = {
   title:              'Hi! My name is Arthur Guo! I am a developer!',
   buttonText:         'Who I am exactly?',
-  buttonUrl:          siteNavigation.list[1][1],
+  buttonUrl:          siteNavigation.list[1].url,
   landerImg:          '/resources/img/mountain-base.jpg',
   bgPosDesktop: (m: XY, x: number) => {
     return {
@@ -61,7 +61,7 @@ export const aboutSettings = {
   paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I\'ve made. When I worked for HostGator, I learned some programming while fixing customer\'s websites. After HostGator, I worked in several coding side projects from my employers. While I\'m off the clock, I took action and build several website for my clients.',
 
   buttonText:         'Check out my projects!',
-  buttonUrl:          siteNavigation.list[2][1],
+  buttonUrl:          siteNavigation.list[2].url,
   skillTitle:         'Skills',
   skillList:          [
     {

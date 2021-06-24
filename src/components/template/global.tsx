@@ -1,21 +1,24 @@
 /**
  * This is a library of the globally used templates
  */
-import { changeRoute } from '../../lib/actions';
+import { changeRoute, isMobile } from '../../lib/actions';
 import { siteNavigation, siteFooterText } from '../../lib/settings';
 import Wave from 'react-wavify';
 import { XY } from '../../lib/types';
 
-// Top side navigation
-export function navigation(scrollPos: XY): JSX.Element {
+
+// Desktop Nav
+function navDesktop(scrollPos: XY, index: number): JSX.Element {
   const points = (window.innerWidth > 480) ? 8 : 4;
   const topWaveName = (scrollPos.y > 160) ? 'active' : '';
   
-  const entries = siteNavigation.list.map ((item, num) => // item[0] is name, item[1] is url (all strings)
+  // List site URL
+  const entries = siteNavigation.list.map((item, num) => 
     <span
       key = { `nav_${ num }` }
-      onClick = { () => { changeRoute(item[1]) } }
-    >{ item[0] }</span>
+      className = { ` ${ (index === num) ? 'select' : '' }` }
+      onClick = { () => { if (index !== num) { changeRoute(item.url) } } }
+    >{ item.name }</span>
   );
   return (
     <nav>
@@ -27,7 +30,49 @@ export function navigation(scrollPos: XY): JSX.Element {
       { entries }
     </nav>
   );
+}
+
+// Mobile Nav
+function navMobile(index: number): JSX.Element {
+
+  // List site URL
+  const entries = siteNavigation.list.map((item, num) => 
+    <span
+      key = { `nav_${ num }` }
+      className = { ` ${ (index === num) ? 'select' : '' }` }
+      onClick = { () => { if (index !== num) { changeRoute(item.url) } } }
+    >{ item.name }</span>
+  );
+
+  // Hamburger menu
+  const menuActive = (window.mobileMenu) ? 'is-active' : '';
+  const toggle = () => {
+    window.mobileMenu = !window.mobileMenu; console.log(window.mobileMenu)
+  }
+  const burger = (
+    <div className = { `hamburger hamburger--squeeze ${ menuActive }` } onClick = { toggle }>
+      <span className="hamburger-box">
+        <span className="hamburger-inner"></span>
+      </span>
+    </div>
+  );
+
+  return (
+    <div className = 'mobile-nav'>
+    <nav className = { (window.mobileMenu) ? 'open' : '' }>
+      { entries }
+    </nav>
+    { burger }
+    </div>
+  );
+}
+
+export function navigation(scrollPos: XY, index: number): JSX.Element {
+  if (isMobile()) { return navMobile(index); }
+  return navMobile(index);//scrollPos, 
 };
+
+
 
 // Bottom side footer section
 export function footer(): JSX.Element {

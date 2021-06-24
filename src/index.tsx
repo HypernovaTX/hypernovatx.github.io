@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import './resources/index.scss';
 import { HashRouter as Router, Switch, Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import './resources/index.scss';
+import './resources/_mobile.scss';
 
 // Components (pages)
 import Home from './components/home';
@@ -20,13 +21,15 @@ const store = transition();
 declare global {
   interface Window {
     startT: () => void;
-    stepT: number;
+    inTransition: boolean;
     url: string;
+    mobileMenu: boolean;
   }
 }
 window.startT = () => {};
 window.url = '#';
-window.stepT = -1;
+window.inTransition = false;
+window.mobileMenu = false;
 
 ReactDOM.render(
   <React.StrictMode>

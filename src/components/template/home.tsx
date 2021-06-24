@@ -1,6 +1,6 @@
 import { navigation } from "./global";
-import { homeSettings, mobileDevice } from '../../lib/settings';
-import { changeRoute } from '../../lib/actions';
+import { homeSettings } from '../../lib/settings';
+import { changeRoute, isMobile } from '../../lib/actions';
 import { XY } from "../../lib/types";
 import Typewriter from 'typewriter-effect';
 
@@ -25,7 +25,7 @@ export default class TemplateHome {
 
     // Grab all of the background position (desktop has parallax cursor effect, mobile doesn't)
     let getBgPos = homeSettings.bgPosDesktop({ x, y }, this.xpos);
-    if (mobileDevice.test(navigator.userAgent)) {
+    if (isMobile()) {
       getBgPos = homeSettings.bgPosMobile(this.xpos);
     }
     const bgMountain = getBgPos.mountain;
@@ -56,7 +56,7 @@ export default class TemplateHome {
 
   // Will be manually called via "Home" component
   output(): JSX.Element {
-    return (<>{ navigation({ x: 0, y: 0}) }{ this.landing() }</>)
+    return (<>{ navigation({ x: 0, y: 0}, 0) }{ this.landing() }</>)
   }
 }
 

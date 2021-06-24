@@ -13,13 +13,16 @@ export default class Transition extends React.Component<Props, State> {
   componentDidMount() {
     // Set the global callback function to begin transition animation
     window.startT = () => {
-      if (window.stepT >= 0) { return; } // Prevent multi calls
+      if (this.state.step >= 0) { return; } // Prevent multi calls
       setTimeout( () => this.updateStep(0), 5);
       setTimeout( () => this.updateStep(1), 5);
       setTimeout( () => this.updateStep(2), 40);
       setTimeout( () => this.updateStep(3), 600);
-      setTimeout( () => this.updateStep(1), 610);
-      setTimeout( () => this.updateStep(-1), 1100);
+      setTimeout( () => this.updateStep(4), 610);
+      setTimeout( () => {
+        this.updateStep(-1);
+        window.inTransition = false;
+      }, 1100);
     }
 
     window.addEventListener('mousemove', this.updateMouse);
@@ -41,7 +44,7 @@ export default class Transition extends React.Component<Props, State> {
 
     switch (step) {
       case -1: return { display: 'none' };
-      case 1: return {
+      case 1: case 4: return {
         left: `${ mouse.x }px`,
         top: `${ mouse.y }px`,
         width: '0em',
