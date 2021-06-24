@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.06ef7938.chunk.css",
-    "main.js": "/static/js/main.5cba4dfa.chunk.js",
-    "main.js.map": "/static/js/main.5cba4dfa.chunk.js.map",
+    "main.css": "/static/css/main.a6af9933.chunk.css",
+    "main.js": "/static/js/main.cce5b605.chunk.js",
+    "main.js.map": "/static/js/main.cce5b605.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.712a7bac.js",
     "runtime-main.js.map": "/static/js/runtime-main.712a7bac.js.map",
     "static/js/2.3fc382d3.chunk.js": "/static/js/2.3fc382d3.chunk.js",
@@ -10,10 +10,10 @@
     "static/js/3.d8745975.chunk.js": "/static/js/3.d8745975.chunk.js",
     "static/js/3.d8745975.chunk.js.map": "/static/js/3.d8745975.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.06ef7938.chunk.css.map": "/static/css/main.06ef7938.chunk.css.map",
+    "static/css/main.a6af9933.chunk.css.map": "/static/css/main.a6af9933.chunk.css.map",
     "static/js/2.3fc382d3.chunk.js.LICENSE.txt": "/static/js/2.3fc382d3.chunk.js.LICENSE.txt",
+    "static/media/AG.jpg": "/static/media/AG.acb498a4.jpg",
     "static/media/ag.jpg": "/static/media/ag.f9e27371.jpg",
-    "static/media/arthurguo.jpg": "/static/media/arthurguo.3b209473.jpg",
     "static/media/about.scss": "/static/media/pattern.7eccdfcc.svg",
     "static/media/home.scss": "/static/media/mountain-base.c4abd33a.jpg",
     "static/media/cops.jpg": "/static/media/cops.c6b1f732.jpg",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.712a7bac.js",
     "static/js/2.3fc382d3.chunk.js",
-    "static/css/main.06ef7938.chunk.css",
-    "static/js/main.5cba4dfa.chunk.js"
+    "static/css/main.a6af9933.chunk.css",
+    "static/js/main.cce5b605.chunk.js"
   ]
 }
