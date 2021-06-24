@@ -41,6 +41,7 @@ export default class Transition extends React.Component<Props, State> {
   determineStyle() {
     const { x, y, step } = this.state;
     const mouse = { x, y };
+    const getDiameter = Math.max(window.innerWidth, window.innerHeight);
 
     switch (step) {
       case -1: return { display: 'none' };
@@ -54,8 +55,8 @@ export default class Transition extends React.Component<Props, State> {
       case 2: return {
         left: `calc(${ mouse.x }px - 150vw)`,
         top: `calc(${ mouse.y }px - 150vh)`,
-        width: '300vw',
-        height: '300vh',
+        width: getDiameter * 3,
+        height: getDiameter * 3,
         display: 'block',
       }
       case 3: return {
