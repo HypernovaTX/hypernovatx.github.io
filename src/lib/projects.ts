@@ -6,12 +6,12 @@ export const pList = [
     life: 'Jun 2021 - NOW',
     image: require('../resources/img/proj/ag.jpg'),
     tools: ['TypeScript', 'SCSS', 'React', 'React Router'],
-    description: 'This is what you\'re looking at right now! My purpose of making this website is to sharpen my programming abilities while have a place to showcase my skills.',
+    description: 'This is what you\'re looking at right now! My purpose in making this website is to sharpen my programming abilities while having a place to showcase my skills.',
     learned: [
-      'Better general organization, design pattern, and logic seperation',
-      'Fluency in SCSS',
-      'More understanding of React Hooks',
-      'Learned on how to use libraries such as React Simple Animate',
+      'General organization, design pattern, and logic seperation',
+      'Fluency in SASS/SCSS',
+      'Greater understanding of React Hooks and its rules',
+      'Basic understandings of libraries such as Redux',
     ],
     url: [
       { name: 'Source', link: 'https://github.com/HypernovaTX/hypernovatx.github.io' },
@@ -43,10 +43,10 @@ export const pList = [
     life: 'Oct 2020 - Feb 2021',
     image: require('../resources/img/proj/dfwmr.jpg'),
     tools: ['TypeScript', 'React', 'PHP', 'MySQL', 'React Router'],
-    description: 'This the first complex website I\'ve built for a client to excercise my knowledge. The website allows customer to input their vehicle specs to look up the quotes. Admins can access a special login page to view/edit vehicle quotes and other users.',
+    description: 'This the first complex website I\'ve built for a client. This has allowed me to excercise my knowledge. The website allows customers to input their vehicle specs and look up the quotes. Admins can access a special login page to view/edit vehicle quotes and users\' accounts.',
     learned: [
       'Some understanding of development lifecycle',
-      'Understanding of user registration/login system',
+      'Understanding of user registration/login systems',
       'Dealing with more complex API requests using Axios',
       'Dealing with more complex data structures',
       'Better understanding of OOP in PHP'
@@ -63,10 +63,10 @@ export const pList = [
     life: 'Sep 2020 - Oct 2020',
     image: require('../resources/img/proj/bugtrack.jpg'),
     tools: ['TypeScript', 'React', 'Express', 'MySQL'],
-    description: 'This is the the Bug Track project I have written right after learning ReactJS. To challenge myself, I created this as a more complex version of "To-Do" list. I have halted the develop of this project in favor of a freelance project to follow up.',
+    description: 'This is a bug-tracking project I wrote after learning ReactJS. To challenge myself, I created this as a more complex version of a “To-Do" list. However, I have halted the development of this project in favor of a freelance project.',
     learned: [
-      'Learned more with React and its components',
-      'Getting an understanding of Express.js',
+      'More about React and its components',
+      'An understanding of Express.js',
       'Processing, sorting, and filtering data from MySQL',
       'Creating a form to write data to the database',
     ],
@@ -82,7 +82,7 @@ export const pList = [
     life: 'Apr 2020 - May 2020',
     image: require('../resources/img/proj/rtg2.jpg'),
     tools: ['Game Maker: Studio 1.4', 'GML', 'GLSL', 'Graphic Design'],
-    description: 'During the early month of Covid-19 lock down, I built this game out of boredom. Most of the assets in this game are handmade/edited by myself. For example, the in-game artworks are hand drawn in Microsoft Paint.',
+    description: 'During the early months of Covid-19 lockdown, I built this game to entertain myself. Most of the assets in this game are handmade or edited by myself. For example, the in-game artwork is hand-drawn in Microsoft Paint.',
     learned: [],
     url: [
       { name: 'Gameplay Video', link: 'https://www.youtube.com/watch?v=8ZL53sWlx74' },
@@ -96,12 +96,12 @@ export const pList = [
     life: 'Jan 2019 - Oct 2019',
     image: require('../resources/img/proj/mfgg.jpg'),
     tools: ['PHP', 'MySQL', 'JavaScript'],
-    description: 'MFGG is an old game development community founded in 2001 and the site software is written in 2006. I fixed some of the site bugs, patched in security hole, and added more feature to a legacy codebase.',
+    description: 'MFGG is an old game development community founded in 2001. The software that the site utilizes was written in 2006 with PHP 5.2. I fixed some of the site\'s bugs, patched a security hole, and added more features to a legacy codebase.',
     learned: [
-      'Have an understanding working with legacy codebase',
-      'Preventive measures on security vulnerability like SQL injection',
-      'Understanding the difference of various of SQL joins',
-      'Handling a large database',
+      'An understanding of working with a legacy codebase',
+      'Preventive measures for security vulnerabilities like SQL injection',
+      'The differences of various of SQL joins',
+      'How to handle a large database',
     ],
     url: [
       { name: 'Live Site', link: 'https://mfgg.net' },
@@ -115,7 +115,7 @@ export const pList = [
     life: 'Apr 2018 - Mar 2019',
     image: require('../resources/img/proj/removu.jpg'),
     tools: ['WordPress', 'PHP', 'JavaScript'],
-    description: 'Removu is a Korean based camera company. The website is built on WordPress and is hosted on an Ubuntu based AWS server. I have helped the company by maintaing the site and redesign its UI.\n\nThe source is in the company network and unfortunately the company is no longer is business.',
+    description: 'Removu is a Korean-based camera company. Their website is built on WordPress and is hosted on an Ubuntu-based AWS server. I have helped the company by maintaing the site and redesigning its UI.\n\nHowever, the source is in the company network and, unfortunately, the company is no longer is business.',
     learned: [
       'Optimization of WordPress plugins',
       'Some knowledge on JavaScript',
@@ -131,8 +131,10 @@ export const pList = [
     life: 'May 2017 - Jun 2017',
     image: require('../resources/img/proj/tgrb.jpg'),
     tools: ['WordPress', 'PHP'],
-    description: 'I got a client from Billings MT asking me to design a very simple website for his company. The website only took me a very short period of time to complete.',
-    learned: [],
+    description: 'I got a client from Billings MT that asked me to design a very simple website for his company. I was able to do this in a very short period of time.',
+    learned: [
+      'How to finish a project in a short amount of time'
+    ],
     url: [
       { name: 'Reupload', link: 'http://greenroom.byethost8.com/' },    
       { name: 'Source', link: 'https://drive.google.com/file/d/1w9qGQiiTSWYTTe5PgU__vln0OQCXFoQi/view?usp=sharing' }
@@ -164,10 +166,10 @@ export const pList = [
     life: 'Mar 2015 - Jul 2015',
     image: require('../resources/img/proj/ir2.png'),
     tools: ['Game Maker: Studio 1.4', 'GML'],
-    description: 'Infinite Run Two was sequel of a less successful game I built in early 2013 (Infinite Run One). I started off this project as an experimental 2D terrain generator.',
+    description: 'Infinite Run Two was sequel to a less successful game that I built in early 2013 (Infinite Run One). I started off this project as an experimental 2D terrain generator.',
     learned: [
-      'Using seed to generate random terrains',
-      'More polished game UI',
+      'Using seeds to generate random terrains',
+      'How to design more polished game UI',
     ],
     url: [
       { name: 'Gameplay Video', link: 'https://www.youtube.com/watch?v=VA8VnkEINE4' },

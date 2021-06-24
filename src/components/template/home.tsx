@@ -3,6 +3,9 @@ import { homeSettings } from '../../lib/settings';
 import { changeRoute, isMobile } from '../../lib/actions';
 import { XY } from "../../lib/types";
 import Typewriter from 'typewriter-effect';
+import { contactSettings as CS } from '../../lib/settings';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 type updateHook = React.Dispatch<React.SetStateAction<string>>;
 
@@ -45,6 +48,14 @@ export default class TemplateHome {
               .start();
           } }
         /></h1>
+        <dd className = { this.buttonName }>
+          <a href = {CS.github} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
+            <FontAwesomeIcon icon = { faGithub }/>
+          </a>
+          <a href = {CS.linkedin} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
+            <FontAwesomeIcon icon = { faLinkedin }/>
+          </a>
+        </dd>
         <button
           className = { this.buttonName }
           disabled = { (this.buttonName === 'active') ? false : true }

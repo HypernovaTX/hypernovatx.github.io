@@ -57,8 +57,8 @@ export const homeSettings = {
 export const aboutSettings = {
   title:              'Who I am?',
   landerImg:          require('../resources/img/arthurguo.jpg'),
-  paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with one objective: to learn new things everyday. Creativity and problem solving is my bread and butter.',
-  paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I\'ve made. When I worked for HostGator, I learned some programming while fixing customer\'s websites. After HostGator, I worked in several coding side projects from my employers. While I\'m off the clock, I took action and build several website for my clients.',
+  paragraph:          'My name is Arthur Guo (also known as ChengAn or Hypernova). I am a programmer with one objective: to learn new things everyday. Creativity and problem solving are my bread and butter.',
+  paragraph2:         'I started programming games as a hobby during my high school years (2007 - 2011). Over time, I learned how to build websites in HTML / CSS for the games I\'ve made. When I worked for HostGator, I learned some programming while fixing customers\' websites. After HostGator, I took on several programming side-jobs. While off the clock, I took an initiative and built several websites for various clients.',
 
   buttonText:         'Check out my projects!',
   buttonUrl:          siteNavigation.list[2].url,
@@ -82,14 +82,14 @@ export const aboutSettings = {
       title: 'Game Development',
       meta: 'game-dev',
       image: require('../resources/img/icon-gamedev.png'),
-      summary: 'Game development is the initial path I took to learn programming. I learned how to build games with GML and built dozens of game project since 2007.', 
+      summary: 'Game development is the initial path I took to learn programming. I learned how to build games with GML and built dozens of game projects since 2007.', 
       tags: ['Game Maker: Studio', 'GML', 'GLSL'],
     },
     {
       title: 'Others',
       meta: 'others',
       image: require('../resources/img/icon-others.png'),
-      summary: 'I have various of other skills under my belt I learned from hobbies, past work experiences, etc.',
+      summary: 'I have various other skills under my belt I learned from my hobbies, past work experiences, etc',
       tags: ['GNU/Linux', 'DNS', 'Apache', 'Adobe CS', 'Communications', 'Mandarin Chinese (中文 - 普通话)'],
     }, 
   ]
@@ -104,7 +104,7 @@ export const projectSettings = {
 // Contact page
 export const contactSettings = {
   title:              'Contact Me',
-  summary:            'If you\'re interested to hire me, please let me know! I am in Plano, TX but open to remote works.',
+  summary:            'If you\'re interested in hiring me, let me know! I am in Plano, TX but open to remote work.',
 
   avaiable:           '9:00 AM - 5:00 PM (US Central Time)',
   github:             'https://github.com/hypernovatx',
