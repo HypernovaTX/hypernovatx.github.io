@@ -3,7 +3,7 @@ import { aboutSettings } from '../../lib/settings';
 import { XY } from '../../lib/types';
 import { Animate, AnimateGroup } from 'react-simple-animate';
 import Typewriter from 'typewriter-effect';
-import { changeRoute } from '../../lib/actions';
+import { changeRoute, isMobile } from '../../lib/actions';
 
 type aStepFunc = React.Dispatch<React.SetStateAction<boolean>>;
 
@@ -29,6 +29,9 @@ export default class templateAbout {
     const aniEndP = { flex: '0 1 100%', opacity: 1 };
     const aniStartI = { flex: '0 0 0%', opacity: 0, display: 'block', transform: 'translateX(-100px) rotateY(-90deg) rotateZ(-20deg)' };
     const aniEndI = { flex: '0 0 0%', opacity: 1, display: 'block', transform: 'translateX(0px) rotateY(-10deg) rotateZ(-5deg)' };
+    if (isMobile(true)) {
+      aniEndI.transform = 'translateX(0px) rotateY(0deg) rotateZ(0deg)';
+    }
 
     return (
       <header className = 'about'>

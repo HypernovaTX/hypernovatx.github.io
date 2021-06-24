@@ -1,6 +1,10 @@
 import { mobileDevice } from "./settings";
 
-// This is used for global actions
+/**
+ * Use the change the site's URL
+ * @param {string} link - The URL the router is changing to 
+ * @returns {void}
+ */
 export function changeRoute(link: string): void {
   if (window.inTransition) { return; }
   window.inTransition = true;
@@ -13,6 +17,11 @@ export function changeRoute(link: string): void {
   }, 600);
 }
 
+/**
+ * Format the phone number format to: xxx-xxx-xxxx
+ * @param {string} value - The raw value of the phone number
+ * @returns {string}
+ */
 export function formatPhoneText(value: string): string {
   value = value.replace(/[^0-9\b]/g, '').substring(0, 10);
   
@@ -24,7 +33,16 @@ export function formatPhoneText(value: string): string {
   return value;
 }
 
-export function isMobile(): boolean {
-  if (mobileDevice.test(navigator.userAgent)) { return true }
+/**
+ * Determine whether it is on mobile or not (via display or device kind)
+ * @param {boolean} display - (optional) Check on the display rather than the device kind
+ * @returns {boolean}
+ */
+export function isMobile(display: boolean = false): boolean {
+  if (display) {
+    if (window.innerWidth <= 800) { return true; }
+    return false;
+  }
+  if (mobileDevice.test(navigator.userAgent)) { return true; }
   return false;
 }

@@ -68,8 +68,8 @@ function navMobile(index: number): JSX.Element {
 }
 
 export function navigation(scrollPos: XY, index: number): JSX.Element {
-  if (isMobile()) { return navMobile(index); }
-  return navMobile(index);//scrollPos, 
+  if (isMobile(true)) { return navMobile(index); }
+  return navDesktop(scrollPos, index);//
 };
 
 
