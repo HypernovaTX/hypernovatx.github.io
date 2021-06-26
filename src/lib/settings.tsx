@@ -76,14 +76,14 @@ export const aboutSettings = {
       meta: 'back-end',
       image: require('../resources/img/icon-backend.png'),
       summary: 'I first learned back end when I was working on an app in mid-2016 with PHP. Around early 2019, I helped maintaining a legacy back end PHP code base for a website that was made in 2006. In mid 2020, while I was learning React, I learned how to write backend JS with Express.',
-      tags: ['PHP', 'Express'], 
+      tags: ['PHP', 'Express', 'MySQL'], 
     }, 
     {
       title: 'Game Development',
       meta: 'game-dev',
       image: require('../resources/img/icon-gamedev.png'),
       summary: 'Game development is the initial path I took to learn programming. I learned how to build games with GML and built dozens of game projects since 2007.', 
-      tags: ['Game Maker: Studio', 'GML', 'GLSL'],
+      tags: ['Game Maker: Studio', 'GML'],
     },
     {
       title: 'Others',
@@ -99,6 +99,9 @@ export const aboutSettings = {
 export const projectSettings = {
   title:              'Projects',
   summary:            'Here are a list of notable projects I have built in the past.',
+
+  titleClient:        'Client Projects',
+  titlePersonal:        'Personal Projects',
 }
 
 // Contact page

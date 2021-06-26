@@ -1,6 +1,6 @@
 import { footer, navigation } from "./global";
 import { projectSettings } from '../../lib/settings';
-import { pList } from '../../lib/projects';
+import { pList, personalList } from '../../lib/projects';
 import { XY } from '../../lib/types'
 
 export default class templateProjects {
@@ -47,6 +47,7 @@ export default class templateProjects {
           <h2>{ item.title }</h2>
           <dd><b>Type: </b>{ item.type }</dd>
           <dd><b>Date: </b>{ item.life }</dd>
+          <dd><b>Client: </b>{ item.client }</dd>
           <dd><b>Tools: </b>{ item.tools.join(', ') }</dd>
           <br/><dd>{ item.description }</dd><br/>
           {/*(1)*/}
@@ -58,6 +59,41 @@ export default class templateProjects {
 
     return (
       <section className = 'projects'>
+        <h1>{ projectSettings.titleClient }</h1>
+        { projects }
+      </section>
+    )
+  }
+
+  personal(): JSX.Element {
+    // Map an array of Button elements for URLs for each of the projects
+    const urlList = (_urlLs: { name: string, link: string }[], _no: number) => {
+      if (_urlLs.length === 0) { return <></>; }
+
+      return (<dd>{
+        _urlLs.map((_it, _id) => <a key = { `indexu_${_no + _id}`} href = { _it.link } target = '_blank' rel = 'noreferrer'>{ _it.name }</a>)
+      }</dd>);
+    };
+
+    const projects = personalList.map((item, index) => 
+      <div key = { `p_box${index}` } className = { `proj ${item.meta}` }>
+        <img src = { item.image.default } alt = ''></img>
+        <div className = 'right'>
+          <h2>{ item.title }</h2>
+          <dd><b>Type: </b>{ item.type }</dd>
+          <dd><b>Date: </b>{ item.life }</dd>
+          <dd><b>Tools: </b>{ item.tools.join(', ') }</dd>
+          <br/><dd>{ item.description }</dd><br/>
+          {/*(1)*/}
+          { urlList(item.url, index) }
+        </div>
+      </div>
+    )
+
+
+    return (
+      <section className = 'personal'>
+        <h1>{ projectSettings.titlePersonal }</h1>
         { projects }
       </section>
     )
@@ -71,6 +107,7 @@ export default class templateProjects {
       { navigation(this.scroll, 2) }
       { this.landing() }
       { this.list() }
+      { this.personal() }
       { footer() }
     </>)
   }
