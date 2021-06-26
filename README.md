@@ -22,7 +22,17 @@
 </p>
 
 
+## Built With
+### Main Tools
+* [React](https://reactjs.org/)
+* [Typescript](https://typescriptlang.org/)
+* [SCSS](https://sass-lang.com/)
 
+### Libraries
+* [React Router](https://reactrouter.com/)
+* [React Simple Animate](https://react-simple-animate.vercel.app/)
+* [TypewriterJS](https://github.com/tameemsafi/typewriterjs)
+* [Hamburgers](https://jonsuh.com/hamburgers/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
