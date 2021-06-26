@@ -33,6 +33,7 @@
 * [React Simple Animate](https://react-simple-animate.vercel.app/)
 * [TypewriterJS](https://github.com/tameemsafi/typewriterjs)
 * [Hamburgers](https://jonsuh.com/hamburgers/)
+* [EmailJS](https://www.emailjs.com/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
