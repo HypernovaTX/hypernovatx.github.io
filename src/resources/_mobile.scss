@@ -88,85 +88,86 @@
     max-width: 80vw;
   }
 
-  body section.contact form, section.contact .sidebar { min-width: 70vw !important; }
+  body section.contact form, section.contact .sidebar { min-width: 70vw; }
 }
 
 @media only screen and (max-width: 800px) {
-  button { margin: 0em 0.5em; }
+  body section.home button, body section.skills button { margin: 0em 0.5em; }
 
-  section.home {
-    h1 { margin: 1em 0.5em !important; }
+  body section.home {
+    h1 { margin: 1em 0.5em; }
   }
 
-  header.about {
-    height: 100vh !important;
+  body header.about {
+    height: 100vh;
 
     .block {
       flex-direction: column;
       div {
         margin: 1em 0em;
-        max-height: 60vh !important;
-        img { margin-right: 0em !important; }
+        max-height: 60vh;
+        img { margin-right: 0em; }
       }
     }
   }
 
-  section.skills {
-    h1 { margin: 1em !important; }
+  body section.skills {
+    h1 { margin: 1em; }
   }
 
-  section.projects .proj, section.personal .proj {
-    flex-direction: column !important;
+  body section.projects .proj, section.personal .proj {
+    flex-direction: column;
     box-shadow: 0px 4px 24px #000;
     background: mix(rgba(0, 0, 0, 0), $color-accent);
-    padding: 2em 1em !important;
-    margin-top: 2em !important;
+    padding: 2em 1em;
+    margin-top: 2em;
     transition: 500ms ease-out all;
     transform: scale(100%, 100%);
 
     .right {
-      margin: 0 !important;
-      max-width: 80vw !important;
-      padding: 0 !important;
+      margin: 0;
+      max-width: 80vw;
+      padding: 0;
       font-size: 0.8em;
-      box-shadow: none !important;
-      backdrop-filter: none !important;
+      box-shadow: none;
+      backdrop-filter: none;
 
       a {
-        margin: 0 0.5em 0.5em !important;
-        padding: 0.5em 1.25em !important;
-        font-size: 1rem !important;
+        margin: 0 0.5em 0.5em;
+        padding: 0.5em 1.25em;
+        font-size: 1rem;
+        text-align: center;
       }
     }
 
     img {
       border: 1px solid #555;
-      transition: 500ms ease-out all !important;
-      box-shadow: 0 0 0 6px $color-white, 0 4px 4px 6px #000 !important;
-      transform: rotateZ(0deg) !important;
+      transition: 500ms ease-out all;
+      box-shadow: 0 0 0 6px $color-white, 0 4px 4px 6px #000;
+      transform: rotateZ(0deg);
     }
 
     .right {
-      background: rgba(0, 0, 0, 0) !important;
-      transform: initial !important;
+      background: rgba(0, 0, 0, 0);
+      transform: initial;
     }
 
     &:hover {
-      transform: scale(102%, 102%) !important;
+      transform: scale(102%, 102%);
       background: $color-accent;
     }
 
     &:hover img {
-      transform: rotateZ(5deg) !important;
-      box-shadow: 0 0 0 6px $color-white, 0 4px 4px 6px #000 !important;
+      transform: rotateZ(5deg);
+      box-shadow: 0 0 0 6px $color-white, 0 4px 4px 6px #000;
     }
 
-    &:nth-child(2n):hover img { transform: rotateZ(-5deg) !important; }
+    &:nth-child(2n):hover img { transform: rotateZ(-5deg); }
 
     &:hover .right {
-      background: rgba(0, 0, 0, 0) !important;
-      box-shadow: none !important;
-      transform: initial !important;
+      background: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      transform: initial;
     }
 
     
@@ -176,10 +177,10 @@
     h1, p { text-align: center; }
   }
 
-  section.contact {
+  body section.contact {
     form, .sidebar {
-      min-width: 85vw !important;
-      font-size: 0.8em !important;
+      min-width: 85vw;
+      font-size: 0.8em;
     }
 
     form:focus-within, form:hover {
@@ -187,14 +188,14 @@
     }
 
     input[type=submit i], input[type=reset i] {
-      padding: 0.5em 1em !important;
+      padding: 0.5em 1em;
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
-  section.skills {
-    h1 { margin: 1em !important; }
+  body section.skills {
+    h1 { margin: 1em; }
 
     div.skillbox {
       summary {
@@ -205,14 +206,14 @@
         align-items: center;
 
         .texts {
-          margin-left: 0em !important;
+          margin-left: 0em;
           margin-top: 1.5em;
 
-          p { margin-left: 0em !important; }
+          p { margin-left: 0em; }
 
           .tags span {
-            margin: 0.25em !important;
-            padding: 0.5em 1em !important;
+            margin: 0.25em;
+            padding: 0.5em 1em;
           }
         }
       }
@@ -220,56 +221,56 @@
 
     button {
       margin: 0em 0.5em;
-      font-size: 1.25rem !important;
-      padding: 0.75em 1.5em !important;
+      font-size: 1.25rem;
+      padding: 0.75em 1.5em;
     }
   }
 
-  section.projects, section.personal, header.contact { font-size: 0.9em !important; }
+  body section.projects, body section.personal, body header.contact { font-size: 0.9em; }
 
-  footer span {
-    margin: 2rem 1.75rem !important;
+  body footer span {
+    margin: 2rem 1.75em;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  button {
+  body section.home button, body section.skills button {
     margin: 0em 0.5em;
-    font-size: 1.25rem !important;
-    padding: 0.75em 1.5em !important;
+    font-size: 1.25rem;
+    padding: 0.75em 1.5em;
   }
 
-  section.home {
+  body section.home {
     h1 {
-      margin: 1em 0.5em !important;
-      font-size: 2em !important;
+      margin: 1em 0.5em;
+      font-size: 2em;
     }
     dd a {
-      font-size: 2.5em !important;
+      font-size: 2.5em;
     }
   }
 
-  header.about {
-    height: 100vh !important;
+  body header.about {
+    height: 100vh;
 
-    h1 { font-size: 1.5em !important; }
+    h1 { font-size: 1.5em; }
 
     .block {
       flex-direction: column;
-      margin: 0 0.25em !important;
+      margin: 0 0.25em;
       font-size: 0.8em;
 
       div {
         margin: 0.25em 0em;
-        max-height: 60vh !important;
+        max-height: 60vh;
 
         img {
-          max-width: 6em !important;
-          max-height: 6em !important;
+          max-width: 6em;
+          max-height: 6em;
         }
         .paragraph {
-          margin: 0.25em 0.5em !important;
-          padding: 0.75em 1em !important;
+          margin: 0.25em 0.5em;
+          padding: 0.75em 1em;
           text-shadow: 2px 2px 2px #000;
           background: rgba(0, 0, 0, 0.8);
           font-weight: 300;
@@ -284,106 +285,110 @@
     }
   }
 
-  section.skills {
+  body section.skills {
     h1 {
-      font-size: 1.5em !important;
+      font-size: 1.5em;
     }
 
-    div.skillbox {
-      padding: 0.75em 1em !important;
-      margin: 1em 1em !important;
+    .flex-skills div.skillbox {
+      padding: 0.75em 1em;
+      margin: 1em 1em;
 
       summary {
         text-align: center;
-        font-size: 1em !important;
+        font-size: 1em;
       }
       .split {
         .texts {
-          margin-left: 0em !important;
+          margin-left: 0em;
           margin-top: 1.25em;
           
           p {
-            font-size: 1em !important;
-            margin-bottom: 0.25em !important;
+            font-size: 1em;
+            margin-bottom: 0.25em;
           }
 
           .tags span {
-            font-size: 0.75em !important;
-            margin: 0.25em !important;
-            padding: 0.5em 0.75em !important;
+            font-size: 0.75em;
+            margin: 0.25em;
+            padding: 0.5em 0.75em;
           }
         }
       }
     }
 
     button {
-      font-size: 1rem !important;
-      padding: 0.5em 0.75em !important;
-      margin: 0em 0.5em !important;
+      font-size: 1rem;
+      padding: 0.5em 0.75em;
+      margin: 0em 0.5em;
     }
   }
 
-  section.projects .proj, section.personal .proj {
-    padding: 0.5em 0em !important;
-    margin-top: 1em !important;
+  body section.projects .proj, 
+  body section.personal .proj {
+    padding: 0.5em 0em;
+    margin-top: 1em;
 
     h1 {
-      font-size: 1em !important;
+      font-size: 1em;
     }
 
     .right {
-      margin: 0 !important;
-      max-width: 95vw !important;
-      padding: 0 !important;
+      margin: 0;
+      max-width: 95vw;
+      padding: 0;
       font-size: 0.7em;
 
-      a {
-        margin: 0 0.25em 0.5em !important;
-        padding: 0.5em 0.75em !important;
-        font-size: 1rem !important;
+      dd a {
+        margin: 0 0.25em 0.5em;
+        padding: 0.5em 0.75em;
+        font-size: 0.8rem;
       }
     }
 
     img {
-      width: 160px !important;
-      height: 120px !important;
+      width: 160px;
+      height: 120px;
     }
 
-    &:hover { transform: scale(101%, 101%) !important; }
-    &:hover img { transform: rotateZ(3deg) !important; }
-    &:nth-child(2n):hover img { transform: rotateZ(-3deg) !important; }
+    &:hover { transform: scale(101%, 101%); }
+    &:hover img { transform: rotateZ(3deg); }
+    &:nth-child(2n):hover img { transform: rotateZ(-3deg); }
   }
 
-  section.contact {
+  body header.projects,
+  body header.contact {
+    font-size: 0.9em;
+  }
+
+  body section.contact {
     form, .sidebar {
-      max-width: 80vw !important;
-      font-size: 0.7em !important;
+      max-width: 80vw;
+      font-size: 0.7em;
     }
 
     form {
-      div label {
-        margin: 0.25em 0 0em !important;
+      div {
+        label { margin: 0.25em 0 0em; }
+        input[type=submit i], input[type=reset i] {
+          padding: 0.25em .75em;
+          font-size: 1.25em;
+        }
+        &.recaptcha {
+          transform: scale(65%);
+          margin: -1em;
+        }
       }
 
-      .recaptcha {
-        transform: scale(65%);
-        margin: -1em !important;
+      &:focus-within, &:hover {
+        transform: translate(0px, -2px) scale(101%, 101%);
       }
-    }
-
-    form:focus-within, form:hover {
-      transform: translate(0px, -2px) scale(101%, 101%);
-    }
-
-    input[type=submit i], input[type=reset i] {
-      padding: 0.25em .75em !important;
-      font-size: 1.25em !important;
     }
   }
 
-  footer span {
-    font-size: 0.9em !important;
-    margin: 2rem 1rem !important;
+  body footer span {
+    font-size: 0.9em;
+    margin: 2rem 1rem;
     text-align: center;
   }
 }
