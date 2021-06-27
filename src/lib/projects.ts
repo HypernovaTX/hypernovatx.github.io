@@ -142,7 +142,7 @@ export const personalList = [
     life: 'Apr 2020 - May 2020',
     image: require('../resources/img/proj/rtg2.jpg'),
     tools: ['Game Maker: Studio 1.4', 'GML', 'GLSL', 'Graphic Design'],
-    description: 'During the early months of Covid-19 lockdown, I built this game to entertain myself. Most of the assets in this game are handmade or edited by myself. For example, the in-game artwork is hand-drawn in Microsoft Paint.',
+    description: 'During the early months of Covid-19 lockdown, I built this game to entertain myself. Most of the assets in this game are handmade or edited by myself. For example, the in-game artwork is hand-drawn in Microsoft Paint.\r\n \r\nThe game\'s physics were an custom made 2D platformer physics I wrote in 2016 that has improved handling. I modified some collision masks to make the experience even better plus some jumping physics change by increase the sensitivity when the player release the jump key.',
     learned: [],
     url: [
       { name: 'Gameplay Video', link: 'https://www.youtube.com/watch?v=8ZL53sWlx74' },
@@ -156,7 +156,7 @@ export const personalList = [
     life: 'Mar 2015 - Aug 2016',
     image: require('../resources/img/proj/8tones.jpg'),
     tools: ['Game Maker: Studio 1.4', 'GML', 'PHP', 'MySQL'],
-    description: '8Tones is a music making app I built. The app allows users to sequence their 8-bit music on their mobile device and share their creations.',
+    description: '8Tones is a music making app I built. The app allows users to sequence their 8-bit music on their mobile device and share their creations.\r\n \r\n8Tones allows users to create several music project and users can use the interface to produce music that is heavily inspired by old school music sequencer like Impluse Tracker, Famitracker, etc. Then users can upload their projects online for other users to listen.\r\n \r\nI write a set of array and store it in Game Maker\'s built in Data Structure to save all of the data of a project. To send the project online, I wrote a simple backend PHP API (procedural) that read/write data to the database thanks to the help of another developer called Zack Banack.',
     learned: [
       'Understanding HTTP requests',
       'Basic understanding of PHP and MySQL',
@@ -175,7 +175,7 @@ export const personalList = [
     life: 'Mar 2015 - Jul 2015',
     image: require('../resources/img/proj/ir2.png'),
     tools: ['Game Maker: Studio 1.4', 'GML'],
-    description: 'Infinite Run Two was sequel to a less successful game that I built in early 2013 (Infinite Run One). I started off this project as an experimental 2D terrain generator.',
+    description: 'Infinite Run Two was sequel to a less successful game that I built in early 2013 (Infinite Run One). I started off this project as an experimental 2D terrain generator.\r\n \r\nThe 2D terrain generator is pretty simple, at each of the grid, it checks previous ground elevation by its y-position and create another ground based on its elevation at the end.',
     learned: [
       'Using seeds to generate random terrains',
       'How to design more polished game UI',
@@ -192,7 +192,7 @@ export const personalList = [
     life: 'Jul 2014 - Jul 2016',
     image: require('../resources/img/proj/cops.jpg'),
     tools: ['Game Maker: Studio 1.4', 'GML'],
-    description: 'Cops started off as a mini project for a game jam in mid 2014 where you have to use the color limitations of the Nintendo Entertainment System. Due to popularity, I resumed the development of this game until mid 2016.',
+    description: 'Cops started off as a mini project for a game jam in mid 2014 where you have to use the color limitations of the Nintendo Entertainment System. Due to popularity, I resumed the development of this game until mid 2016.\r\n \r\nThe game\'s physics is extremely simple and built from scratch by myself.',
     learned: [],
     url: [
       { name: 'Gameplay Video', link: 'https://www.youtube.com/watch?v=IGT0QUChwmg' },

@@ -20,12 +20,10 @@ export default class templateAbout {
 
   landing(): JSX.Element {
     // Used for parallx background scroll
-    const landerBGStyle = {
-      backgroundPositionY: `calc(70% + ${Math.round(this.scroll.y / 2)}px)`
-    };
+    const landerBGStyle = { backgroundPositionY: `calc(70% + ${Math.round(this.scroll.y / 2)}px)` };
 
-    // List of styles for <Animate>
-    const aniStartP = { flex: '0 0 0%', opacity: 0 };
+    // List of styles for <Animate>, CSS-in-JS not supported
+    const aniStartP = { flex: '0 0 0%', opacity: 0 } ;
     const aniEndP = { flex: '0 1 100%', opacity: 1 };
     const aniStartI = { flex: '0 0 0%', opacity: 0, display: 'block', transform: 'translateX(-100px) rotateY(-90deg) rotateZ(-20deg)' };
     const aniEndI = { flex: '0 0 0%', opacity: 1, display: 'block', transform: 'translateX(0px) rotateY(-10deg) rotateZ(-5deg)' };
