@@ -25,8 +25,8 @@ export const siteNavigation =           { list: [
 // Home page
 export const homeSettings = {
   title:              'Hi! My name is Arthur Guo! I am a web developer!',
-  buttonText:         'Who I am exactly?',
-  buttonUrl:          siteNavigation.list[1].url,
+  buttonText:         'Check out my projects!',
+  buttonUrl:          siteNavigation.list[2].url,
   landerImg:          '/resources/img/mountain-base.jpg',
   bgPosDesktop: (m: XY, x: number) => {
     return {

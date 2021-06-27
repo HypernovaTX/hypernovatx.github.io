@@ -47,7 +47,7 @@ function navMobile(index: number): JSX.Element {
   // Hamburger menu
   const menuActive = (window.mobileMenu) ? 'is-active' : '';
   const toggle = () => {
-    window.mobileMenu = !window.mobileMenu; console.log(window.mobileMenu)
+    window.mobileMenu = !window.mobileMenu;
   }
   const burger = (
     <div className = { `hamburger hamburger--squeeze ${ menuActive }` } onClick = { toggle }>
