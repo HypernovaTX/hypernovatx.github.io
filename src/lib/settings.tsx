@@ -6,7 +6,7 @@ import { XY } from './types';
 // Global stuff
 export const siteName =                 'Arthur Guo \'s Website';
 export const siteRoot =                 '';
-export const siteFooterText =           'Website designed by Arthur (Hypernova) Guo - 2021';
+export const siteFooterText =           'Website designed by Arthur Guo (Hypernova) - 2021';
 export const mobileDevice =             /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i;
 export const phoneValidate =            /^\d{3}-\d{3}-\d{4}$/;
 // eslint-disable-next-line no-control-regex

@@ -7,7 +7,7 @@ import '@testing-library/jest-dom'
  * TEST 1 - Test the home button exists
  */
 test('testRender-HomeButton', () => {
-  render(<Home />);
+  render(<Home/>);
   const linkElement = screen.getByText(/(Check out my projects!)/);
   expect(linkElement).toBeInTheDocument();
 });
