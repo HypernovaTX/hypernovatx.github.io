@@ -51,11 +51,11 @@ export default class TemplateProject extends React.Component<Props, State> {
     }
     
     // Map out the filter button elements
+    const currentFilterSet = new Set(filter);
     const filters = uniqueList.map((item) => {
-      const className = (filter.find((li) => li === item)) ? 'on' : '';
       return (
         <div
-          className = {`filter ${ className }`}
+          className = {`filter ${ (currentFilterSet.has(item)) ? 'on' : '' }`}
           onClick = { () => { update(item) } }
           key = {`filter_${item}`}
         >{ item }</div>
