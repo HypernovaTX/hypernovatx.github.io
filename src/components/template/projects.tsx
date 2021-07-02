@@ -43,7 +43,7 @@ export default class TemplateProject extends React.Component<Props, State> {
     // Remove any duplicates
     const uniqueList = Array.from(new Set(fullList));
 
-    // Update filter
+    // Update filter function
     const update = (name: string) => {
       const found = filter.indexOf(name);
       if (found >= 0) { filter.splice(found, 1); }
@@ -52,6 +52,7 @@ export default class TemplateProject extends React.Component<Props, State> {
       this.setState({ filter });
     }
     
+    // Map out the filter button elements
     const filters = uniqueList.map((item) => {
       const className = (filter.find((li) => li === item)) ? 'on' : '';
       return (
@@ -62,6 +63,7 @@ export default class TemplateProject extends React.Component<Props, State> {
         >{ item }</div>
       );
     });
+
     return (
       <section className = 'filters'>
         <h1>{ projectSettings.filter }</h1>
