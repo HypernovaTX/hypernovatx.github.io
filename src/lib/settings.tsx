@@ -17,7 +17,7 @@ export const emailJsTemplate =          'template_n47zplu';
 export const recaptcha =                '6LcOflEbAAAAAM_V8jC05Id_iqz3UJBqNLtPlir0';
 export const siteNavigation =           { list: [
   { name: 'Home', url: siteRoot + '/#' },
-  { name: 'About Me', url: siteRoot + '/#/about' },
+  { name: 'About', url: siteRoot + '/#/about' },
   { name: 'Projects', url: siteRoot + '/#/projects' },
   { name: 'Contact', url: siteRoot + '/#/contact' }, // Google Form - https://forms.gle/b2VFnmVQmQhZh48G8
 ] };
@@ -101,7 +101,9 @@ export const projectSettings = {
   summary:            'Here are a list of notable projects I have built in the past.',
 
   titleClient:        'Client Projects',
-  titlePersonal:        'Personal Projects',
+  titlePersonal:      'Personal Projects',
+
+  filter:             'Click on any of the items below to filter the projects',
 }
 
 // Contact page

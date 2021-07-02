@@ -55,6 +55,65 @@ header.projects {
   }
 }
 
+section.filters {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  h1 {
+    flex-basis: 100%;
+    text-align: center;
+    color: $color-white;
+    font-weight: 300;
+    margin: 1.5em 2em;
+    font-size: 1.2rem;
+    font-family: Roboto;
+    z-index: 1;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+    div.filter {
+      color: #FFF;
+      display: inline-block;
+      background-color: $color-accent;
+      margin: 0.5em;
+      padding: 0.5em 1.5em;
+      border-radius: 2em;
+      transition: 200ms linear all;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+      transform: translate(0, 0px);
+      cursor: pointer;
+      border: 2px solid $color-accent;
+
+      &:hover {
+        background-color: $color-accent2;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        transform: translate(0, -2px);
+      }
+      &:active {
+        background-color: mix($color-accent2, #FFF);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        transform: translate(0, -1px);
+      }
+
+      &.on {
+        background-color: #FFF;
+        color: $color-accent;
+        &:hover { background-color: mix($color-accent2, #FFF); }
+        &:active { background-color: mix($color-accent, #FFF); }
+      }
+    }
+  }
+}
+
 
 section.personal {
   background: $personal-bg-grad, url('./img/pattern.svg') $color-black2;

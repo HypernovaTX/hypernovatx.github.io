@@ -1,19 +1,23 @@
 import { footer, navigation } from "./global";
 import { projectSettings } from '../../lib/settings';
 import { pList, personalList } from '../../lib/projects';
-import { XY } from '../../lib/types'
+import { XY, project } from '../../lib/types'
+import React from "react";
 
-export default class templateProjects {
-  scroll: XY;
+type Props = { scroll: XY; }
+type State = { filter: string[]; }
 
-  constructor(scr: XY) {
-    this.scroll = scr;
+export default class TemplateProject extends React.Component<Props, State> {
+  constructor(p: Props) {
+    super(p);
+    this.state = { filter: [] };
   }
 
   landing(): JSX.Element {
     // Used for parallx background scroll
+    const { scroll } = this.props;
     const landerBGStyle = {
-      backgroundPositionY: `calc(70% + ${Math.round(this.scroll.y / 2)}px)`
+      backgroundPositionY: `calc(70% + ${Math.round(scroll.y / 2)}px)`
     };
 
 
@@ -26,10 +30,61 @@ export default class templateProjects {
     );
   }
 
+  // Section where end user can filter the tools used for each of my projects
+  filters(): JSX.Element {
+    let { filter } = this.state;
+
+    // Combine both project lists and only get "tools"
+    let fullList: string[] = [];
+    [...pList, ...personalList].forEach(({ tools }) => {
+      fullList = [...fullList, ...tools];
+    } ); 
+
+    // Remove any duplicates
+    const uniqueList = Array.from(new Set(fullList));
+
+    // Update filter
+    const update = (name: string) => {
+      const found = filter.indexOf(name);
+      if (found >= 0) { filter.splice(found, 1); }
+      else { filter.push(name); }
+      console.log(filter);
+      this.setState({ filter });
+    }
+    
+    const filters = uniqueList.map((item) => {
+      const className = (filter.find((li) => li === item)) ? 'on' : '';
+      return (
+        <div
+          className = {`filter ${ className }`}
+          onClick = { () => { update(item) } }
+          key = {`filter_${item}`}
+        >{ item }</div>
+      );
+    });
+    return (
+      <section className = 'filters'>
+        <h1>{ projectSettings.filter }</h1>
+        <div>{ filters }</div>
+      </section>
+    )
+  }
+
   list(): JSX.Element {
+    const { filter } = this.state; 
+
     // Map a list of "What I have learned:"
     // UPDATE - I commented this out because it is unnecessary, see footnote (1)
     
+    // Apply filter to pList
+    let actualList: project[] = pList;
+    if (filter.length) {
+      actualList = [];
+      pList.forEach((item) => {
+        if (item.tools.find((tool) => filter.find((li) => tool === li)))
+        actualList.push(item);
+      })
+    }
 
     // Map an array of Button elements for URLs for each of the projects
     const urlList = (_urlLs: { name: string, link: string }[], _no: number) => {
@@ -39,8 +94,9 @@ export default class templateProjects {
         _urlLs.map((_it, _id) => <a key = { `indexu_${_no + _id}`} href = { _it.link } target = '_blank' rel = 'noreferrer'>{ _it.name }</a>)
       }</dd>);
     };
-
-    const projects = pList.map((item, index) => 
+    
+    // MAIN project list mapping
+    let projects = actualList.map((item, index) => 
       <div key = { `p_box${index}` } className = { `proj ${item.meta}` }>
         <img src = { item.image.default } alt = ''></img>
         <div className = 'right'>
@@ -55,6 +111,16 @@ export default class templateProjects {
         </div>
       </div>
     )
+
+    if (!projects.length) {
+      projects = [
+        <div className = { `proj null` }>
+        <div className = 'right'>
+          <h2>{  }</h2>
+        </div>
+      </div>
+      ]
+    }
 
 
     return (
@@ -90,7 +156,6 @@ export default class templateProjects {
       </div>
     )
 
-
     return (
       <section className = 'personal'>
         <h1>{ projectSettings.titlePersonal }</h1>
@@ -99,13 +164,12 @@ export default class templateProjects {
     )
   }
 
-
-
-  // Will be manually called via "Projects" component
-  output(): JSX.Element {
+  render(): JSX.Element {
+    const { scroll } = this.props;
     return (<>
-      { navigation(this.scroll, 2) }
+      { navigation(scroll, 2) }
       { this.landing() }
+      { this.filters() }
       { this.list() }
       { this.personal() }
       { footer() }

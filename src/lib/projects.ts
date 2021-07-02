@@ -5,7 +5,7 @@ export const pList = [
     type: 'Front End',
     life: 'Mar 2021 - Jun 2021',
     image: require('../resources/img/proj/jjpool.jpg'),
-    tools: ['TypeScript', 'React', 'PHP'],
+    tools: ['TypeScript', 'React', 'PHP', 'JavaScript'],
     client: 'JJ Industries LLC',
     description: 'This is a simple React website I\'ve built for a pool cleaning company. I have crafted the design of this website completely by myself as per client\'s request.\r\n \r\nThe website has a relatively simple structure, the main component assembles the templates together. Each section of the website is separated as a function so it would be easier to update if I need to go back and update. I also created a separate component for the contact form because it handles form data, process data, and sending request to the emailer PHP file which is a mini API to send email from the contact form.',
     learned: [
@@ -24,7 +24,7 @@ export const pList = [
     type: 'Full Stack',
     life: 'Oct 2020 - Feb 2021',
     image: require('../resources/img/proj/dfwmr.jpg'),
-    tools: ['TypeScript', 'React', 'PHP', 'MySQL'],
+    tools: ['TypeScript', 'React', 'PHP', 'MySQL', 'JavaScript'],
     client: 'Hamm (Houmod)',
     description: 'This the first complex website I\'ve built for a client. This has allowed me to excercise my knowledge on full stack development. The website allows customers to input their vehicle specs and look up the quotes. The admins can access the admin dashboard to view/edit vehicle quotes and users\' accounts.\r\n \r\nThe front end has a router that defines each of the pages, each page is an entire component in exception of the admin dashboard where there it also calls (via Axios) an addition component that works as a quote editor popup window. Some component calls (Axios) to the backend to process the data.\r\n \r\nThe PHP backend (private due to security concerns) are separated by 2 classes: "user" for login and user editing and "quote" for viewing and editing. Both of the classes calls to the SQL class which is a very basic ORM I wrote. When sending response, most of the data are sent as JSON.',
     learned: [
@@ -103,7 +103,7 @@ export const personalList = [
     type: 'Front End',
     life: 'Jun 2021 - NOW',
     image: require('../resources/img/proj/ag.jpg'),
-    tools: ['TypeScript', 'SCSS', 'React', 'React Router'],
+    tools: ['TypeScript', 'SCSS', 'React', 'JavaScript'],
     description: 'This is what you\'re looking at right now! My purpose in making this website is to sharpen my programming abilities while having a place to showcase my skills.\r\n \r\nSince this website is hosted on GitHub pages, I have learned how to use HashRouter to render the entire site without changing the actual URL which results in GitHub\'s 404 page. In addition, I have seperated each page to a component that builds itself from a global settings file and templates.',
     learned: [
       'General organization, design pattern, and logic seperation',
@@ -122,7 +122,7 @@ export const personalList = [
     type: 'Full Stack',
     life: 'Sep 2020 - Oct 2020',
     image: require('../resources/img/proj/bugtrack.jpg'),
-    tools: ['TypeScript', 'React', 'Express', 'MySQL'],
+    tools: ['TypeScript', 'React', 'Express', 'MySQL', 'JavaScript'],
     description: 'This is a bug-tracking project I wrote after learning ReactJS. To challenge myself, I created this as a more complex version of a “To-Do" list. However, I have halted the development of this project in favor of a freelance project. My original goal for this project is a full fledged bug tracking software with a login system and modular ticket items.\r\n \r\nThe front end splits into 2 components: "Sidebar" (unused) and "TicketList". "TicketList" is the main component that handles requests (Axios), sorting/filtering data, and an additional component that handles the popup window for data editing.\r\n \r\nThe backend is fairly simple, it uses "app.post" to route the requests. The it uses a class called "dbimport" as a basic ORM to read/write data from the database. Then it toss the data in JSON format.',
     learned: [
       'More about React and its components',
@@ -141,7 +141,7 @@ export const personalList = [
     type: 'Game Development',
     life: 'Apr 2020 - May 2020',
     image: require('../resources/img/proj/rtg2.jpg'),
-    tools: ['Game Maker: Studio 1.4', 'GML', 'GLSL', 'Graphic Design'],
+    tools: ['GML'],
     description: 'During the early months of Covid-19 lockdown, I built this game to entertain myself. Most of the assets in this game are handmade or edited by myself. For example, the in-game artwork is hand-drawn in Microsoft Paint.\r\n \r\nThe game\'s physics were an custom made 2D platformer physics I wrote in 2016 that has improved handling. I modified some collision masks to make the experience even better plus some jumping physics change by increase the sensitivity when the player release the jump key.',
     learned: [],
     url: [
@@ -155,7 +155,7 @@ export const personalList = [
     type: 'Full Stack',
     life: 'Mar 2015 - Aug 2016',
     image: require('../resources/img/proj/8tones.jpg'),
-    tools: ['Game Maker: Studio 1.4', 'GML', 'PHP', 'MySQL'],
+    tools: ['GML', 'PHP', 'MySQL'],
     description: '8Tones is a music making app I built. The app allows users to sequence their 8-bit music on their mobile device and share their creations.\r\n \r\n8Tones allows users to create several music project and users can use the interface to produce music that is heavily inspired by old school music sequencer like Impluse Tracker, Famitracker, etc. Then users can upload their projects online for other users to listen.\r\n \r\nI write a set of array and store it in Game Maker\'s built in Data Structure to save all of the data of a project. To send the project online, I wrote a simple backend PHP API (procedural) that read/write data to the database thanks to the help of another developer called Zack Banack.',
     learned: [
       'Understanding HTTP requests',
@@ -174,7 +174,7 @@ export const personalList = [
     type: 'Game Development',
     life: 'Mar 2015 - Jul 2015',
     image: require('../resources/img/proj/ir2.png'),
-    tools: ['Game Maker: Studio 1.4', 'GML'],
+    tools: ['GML'],
     description: 'Infinite Run Two was sequel to a less successful game that I built in early 2013 (Infinite Run One). I started off this project as an experimental 2D terrain generator.\r\n \r\nThe 2D terrain generator is pretty simple, at each of the grid, it checks previous ground elevation by its y-position and create another ground based on its elevation at the end.',
     learned: [
       'Using seeds to generate random terrains',
@@ -191,7 +191,7 @@ export const personalList = [
     type: 'Game Development',
     life: 'Jul 2014 - Jul 2016',
     image: require('../resources/img/proj/cops.jpg'),
-    tools: ['Game Maker: Studio 1.4', 'GML'],
+    tools: ['GML'],
     description: 'Cops started off as a mini project for a game jam in mid 2014 where you have to use the color limitations of the Nintendo Entertainment System. Due to popularity, I resumed the development of this game until mid 2016.\r\n \r\nThe game\'s physics is extremely simple and built from scratch by myself.',
     learned: [],
     url: [
