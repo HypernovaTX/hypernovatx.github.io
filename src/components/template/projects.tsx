@@ -95,7 +95,7 @@ export default class TemplateProject extends React.Component<Props, State> {
       }</dd>);
     };
     
-    // MAIN project list mapping
+    // MAIN client project list mapping
     let projects = actualList.map((item, index) => 
       <div key = { `p_box${index}` } className = { `proj ${item.meta}` }>
         <img src = { item.image.default } alt = ''></img>
@@ -112,14 +112,16 @@ export default class TemplateProject extends React.Component<Props, State> {
       </div>
     )
 
+    // When there's nothing returned
     if (!projects.length) {
       projects = [
         <div className = { `proj null` }>
         <div className = 'right'>
-          <h2>{  }</h2>
+          <dd> </dd>
+          <dd>{ projectSettings.noClient + filter.join(', ') }</dd>
         </div>
       </div>
-      ]
+      ];
     }
 
 
@@ -132,6 +134,18 @@ export default class TemplateProject extends React.Component<Props, State> {
   }
 
   personal(): JSX.Element {
+    const { filter } = this.state; 
+
+    // Apply filter to pList
+    let actualList: project[] = personalList;
+    if (filter.length) {
+      actualList = [];
+      personalList.forEach((item) => {
+        if (item.tools.find((tool) => filter.find((li) => tool === li)))
+        actualList.push(item);
+      })
+    }
+
     // Map an array of Button elements for URLs for each of the projects
     const urlList = (_urlLs: { name: string, link: string }[], _no: number) => {
       if (_urlLs.length === 0) { return <></>; }
@@ -141,7 +155,8 @@ export default class TemplateProject extends React.Component<Props, State> {
       }</dd>);
     };
 
-    const projects = personalList.map((item, index) => 
+    // MAIN personal project list mapping
+    let projects = actualList.map((item, index) => 
       <div key = { `p_box${index}` } className = { `proj ${item.meta}` }>
         <img src = { item.image.default } alt = ''></img>
         <div className = 'right'>
@@ -155,6 +170,18 @@ export default class TemplateProject extends React.Component<Props, State> {
         </div>
       </div>
     )
+
+    // When there's nothing returned
+    if (!projects.length) {
+      projects = [
+        <div className = { `proj null` }>
+        <div className = 'right'>
+          <dd> </dd>
+          <dd>{ projectSettings.noPersonal + filter.join(', ') }</dd>
+        </div>
+      </div>
+      ];
+    }
 
     return (
       <section className = 'personal'>

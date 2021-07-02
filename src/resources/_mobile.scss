@@ -226,7 +226,13 @@
     }
   }
 
-  body section.projects, body section.personal, body header.contact { font-size: 0.9em; }
+  body section.projects, body section.personal, body header.contact {
+    font-size: 0.9em;
+  }
+
+  body section.filters div div.filter {
+    font-size: 0.9rem;
+  }
 
   body footer span {
     margin: 2rem 1.75em;
@@ -321,6 +327,16 @@
       font-size: 1rem;
       padding: 0.5em 0.75em;
       margin: 0em 0.5em;
+    }
+  }
+
+  body section.filters {
+    h1 { font-size: 0.9rem; }
+
+    div div.filter {
+      font-size: 0.8rem;
+      padding: 0.5em 0.75em;
+      margin: 0.25em;
     }
   }
 

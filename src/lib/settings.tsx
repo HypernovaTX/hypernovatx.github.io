@@ -104,6 +104,8 @@ export const projectSettings = {
   titlePersonal:      'Personal Projects',
 
   filter:             'Click on any of the items below to filter the projects',
+  noClient:           'Unfortunately there are no client projects that were made in: ',
+  noPersonal:         'Unfortunately there are no personal projects that were made in: ',
 }
 
 // Contact page

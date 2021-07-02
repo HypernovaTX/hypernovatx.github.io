@@ -263,5 +263,10 @@ section.projects, section.personal {
       transform: scale(102%, 102%) !important;
       background: $color-accent;
     }
+
+    &.null .right {
+      padding-bottom: 0em !important;
+      dd { text-align: center; }
+    }
   }
 }
