@@ -36,9 +36,7 @@ export default class TemplateProject extends React.Component<Props, State> {
 
     // Combine both project lists and only get "tools"
     let fullList: string[] = [];
-    [...pList, ...personalList].forEach(({ tools }) => {
-      fullList = [...fullList, ...tools];
-    } ); 
+    [...pList, ...personalList].forEach(({ tools }) => { fullList = [...fullList, ...tools];}); 
 
     // Remove any duplicates
     const uniqueList = Array.from(new Set(fullList));
