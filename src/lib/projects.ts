@@ -67,14 +67,14 @@ export const pList = [
     image: require('../resources/img/proj/removu.jpg'),
     tools: ['WordPress', 'PHP', 'JavaScript'],
     client: 'Removu America Inc',
-    description: 'Removu is a Korean-based camera company. Their website is built on WordPress and is hosted on an Ubuntu-based AWS server. I have helped the company by maintaing the site and redesigning its UI.\n\nThe website is ran on WordPress, I started removing any unnecessary plugins/assets from the site, compressed the images, and reduced some JavaScript to optimize the load. I then build each section of the home page based on a lander plugin the company purchased and used JavaScript to update the background\'s y position based on the scroll for the parallax effect. The marketing team requested me to use a video as the background of the header, I compressed the video as much as possible for the first header.\n\nHowever, the source is in the company network and, unfortunately, the company is no longer is business. I have included a WayBack Machine URL to prove that the site exists.',
+    description: 'Removu is a Korean-based camera company. Their website is built on WordPress and is hosted on an Ubuntu-based AWS server. I have helped the company by maintaing the site and redesigning its UI.\n\nThe website is ran on WordPress, I started removing any unnecessary plugins/assets from the site, compressed the images, and reduced some JavaScript to optimize the load. I then build each section of the home page based on a lander plugin the company purchased and used JavaScript to update the background\'s y position based on the scroll for the parallax effect. The marketing team requested me to use a video as the background of the header, I compressed the video as much as possible for the first header.',
     learned: [
       'Optimization of WordPress plugins',
       'Some knowledge on JavaScript',
       'WordPress theme modification',
     ],
     url: [
-      { name: 'Archived Site', link: 'https://web.archive.org/web/20200417161609/https://removu.com/' },    ]
+      { name: 'Archived Site', link: 'https://removu.com/' },    ]
   },
   {
     title: 'The Green Room Billiards',
