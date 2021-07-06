@@ -3,7 +3,7 @@ import { contactSettings as CS, emailValidate, phoneValidate, recaptcha } from '
 import { XY, contactForms, contactErr } from '../../lib/types';
 import { formatPhoneText } from '../../lib/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import ReCAPTCHA from "react-google-recaptcha";
 import React from "react";
 
@@ -145,6 +145,9 @@ export default class templateContact {
               </a>
               <a href = {CS.linkedin} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
                 <FontAwesomeIcon icon = { faLinkedin }/>
+              </a>
+              <a href = {CS.twitter} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
+                <FontAwesomeIcon icon = { faTwitter }/>
               </a>
             </dd>
           </div>

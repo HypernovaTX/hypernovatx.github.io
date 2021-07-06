@@ -7,7 +7,7 @@ export const pList = [
     image: require('../resources/img/proj/jjpool.jpg'),
     tools: ['TypeScript', 'React', 'PHP', 'JavaScript'],
     client: 'JJ Industries LLC',
-    description: 'This is a simple React website I\'ve built for a pool cleaning company. I have crafted the design of this website completely by myself as per client\'s request.\r\n \r\nThe website has a relatively simple structure, the main component assembles the templates together. Each section of the website is separated as a function so it would be easier to update if I need to go back and update. I also created a separate component for the contact form because it handles form data, process data, and sending request to the emailer PHP file which is a mini API to send email from the contact form.',
+    description: 'This is a simple React website I\'ve built for a pool cleaning company. I have crafted the design of this website completely by myself as per the client\'s request.\r\n \r\nThe website has a relatively simple structure, the main component assembles the templates together. Each section of the website is separated as a function so it would be easier to update if I need to go back and update. I also created a separate component for the contact form because it handles form data, process data, and sending requests to the emailer PHP file which is a mini API to send emails from the contact form.',
     learned: [
       'Improved code organization',
       'A bit of SVG manipulation',
@@ -123,7 +123,7 @@ export const personalList = [
     life: 'Sep 2020 - Oct 2020',
     image: require('../resources/img/proj/bugtrack.jpg'),
     tools: ['TypeScript', 'React', 'Express', 'MySQL', 'JavaScript'],
-    description: 'This is a bug-tracking project I wrote after learning ReactJS. To challenge myself, I created this as a more complex version of a “To-Do" list. However, I have halted the development of this project in favor of a freelance project. My original goal for this project is a full fledged bug tracking software with a login system and modular ticket items.\r\n \r\nThe front end splits into 2 components: "Sidebar" (unused) and "TicketList". "TicketList" is the main component that handles requests (Axios), sorting/filtering data, and an additional component that handles the popup window for data editing.\r\n \r\nThe backend is fairly simple, it uses "app.post" to route the requests. The it uses a class called "dbimport" as a basic ORM to read/write data from the database. Then it toss the data in JSON format.',
+    description: 'This is a bug-tracking project I wrote after learning ReactJS. To challenge me, I created this as a more complex version of a “To-Do" list. However, I have halted the development of this project in favor of a freelance project. My original goal for this project is a full-fledged bug tracking software with a login system and modular ticket items.\r\n \r\nThe front end splits into 2 components: "Sidebar" (unused) and "TicketList". "TicketList" is the main component that handles requests (Axios), sorting/filtering data, and an additional component that handles the popup window for data editing.\r\n \r\nThe backend is fairly simple, it uses "app.post" to route the requests. It uses a class called "dbimport" as a basic ORM to read/write data from the database. Then it tosses the data in JSON format.',
     learned: [
       'More about React and its components',
       'An understanding of Express.js',

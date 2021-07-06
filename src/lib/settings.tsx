@@ -116,6 +116,7 @@ export const contactSettings = {
   avaiable:           '9:00 AM - 5:00 PM (US Central Time)',
   github:             'https://github.com/hypernovatx',
   linkedin:           'https://www.linkedin.com/in/arthur-guo-a59346148/',
+  twitter:            'https://twitter.com/ArthurGuoTX',
   notice:             'To reduce SPAM, I hid my contact information in this site. When you\'re filling out the forms, please understand that it can only take phone numbers in US / Canada since I cannot make calls outside of +1 country code.',
 
   formName: { label: 'Full Name', name: 'name', },

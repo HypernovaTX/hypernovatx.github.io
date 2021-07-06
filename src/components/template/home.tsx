@@ -5,7 +5,7 @@ import { XY } from "../../lib/types";
 import Typewriter from 'typewriter-effect';
 import { contactSettings as CS } from '../../lib/settings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 type updateHook = React.Dispatch<React.SetStateAction<string>>;
 
@@ -54,6 +54,9 @@ export default class TemplateHome {
           </a>
           <a href = {CS.linkedin} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
             <FontAwesomeIcon icon = { faLinkedin }/>
+          </a>
+          <a href = {CS.twitter} target = '_blank' rel = 'noreferrer' tabIndex = { -1 }>
+            <FontAwesomeIcon icon = { faTwitter }/>
           </a>
         </dd>
         <button
