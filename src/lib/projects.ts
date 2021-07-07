@@ -1,4 +1,4 @@
-export const pList = [
+export const projectListClient = [
   {
     title: 'JJ Pools & Patios',
     meta: 'fe-jjpool',
@@ -96,7 +96,7 @@ export const pList = [
   
 ];
 
-export const personalList = [
+export const projectListPersonal = [
   {
     title: 'Arthur Guo',
     meta: 'fe-agsite',

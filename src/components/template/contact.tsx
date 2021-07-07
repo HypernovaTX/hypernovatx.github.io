@@ -75,7 +75,7 @@ export default class templateContact {
     }
   }
 
-  updateInputs(input: string, form: number): void {
+  updateForm(input: string, form: number): void {
     switch (form) {
       case f.name:
         this.forms.name = input;
@@ -101,7 +101,7 @@ export default class templateContact {
     this.updateForms(this.forms);
   }
 
-  sendData(event: React.FormEvent<HTMLFormElement>) {
+  sendContactData(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (this.recaptcha) { this.sendEmail(); }
     if (this.recaptchaRef && this.recaptchaRef.current) {
@@ -125,7 +125,7 @@ export default class templateContact {
     );
   }
 
-  mainContact(): JSX.Element {
+  renderContact(): JSX.Element {
     const infoSVG = (
       <svg width = '160px' height = '160px' viewBox = '0 0 416.979 416.979'>
 	      <path d = { CS.infoSVG }/>
@@ -162,7 +162,7 @@ export default class templateContact {
     const err = this.formErr;
 
     return (
-      <form onSubmit = {(e) => { this.sendData(e) }} noValidate = { true }>
+      <form onSubmit = {(e) => { this.sendContactData(e) }} noValidate = { true }>
         <div className = { `form-load ${ (this.sendStat) ? 'active' : '' }` }>
           <div className = 'throbber'></div>
         </div>
@@ -175,7 +175,7 @@ export default class templateContact {
             disabled = { this.sendStat }
             value = { this.forms.name }
             className = { (this.formErr.name) ? 'error' : ' ' }
-            onChange = { (e) => { this.updateInputs(e.target.value, f.name) } } 
+            onChange = { (e) => { this.updateForm(e.target.value, f.name) } } 
             onBlur = { () => { this.validateForm(f.name) } }
           />
           { errorCite(CS.errNameEmpty, this.formErr.name) }
@@ -189,7 +189,7 @@ export default class templateContact {
             disabled = { this.sendStat }
             value = { this.forms.email } 
             className = { (this.formErr.email) ? 'error' : ' ' }
-            onChange = { (e) => { this.updateInputs(e.target.value, f.email) } } 
+            onChange = { (e) => { this.updateForm(e.target.value, f.email) } } 
             onBlur = { () => { this.validateForm(f.email) } }
           />
           {
@@ -206,7 +206,7 @@ export default class templateContact {
             disabled = { this.sendStat }
             value = { this.forms.phone } 
             className = { (this.formErr.phone) ? 'error' : ' ' }
-            onChange = { (e) => { this.updateInputs(e.target.value, f.phone) } } 
+            onChange = { (e) => { this.updateForm(e.target.value, f.phone) } } 
             onBlur = { () => { this.validateForm(f.phone) } }
           />
           {
@@ -223,7 +223,7 @@ export default class templateContact {
             disabled = { this.sendStat }
             value = { this.forms.company } 
             className = { (this.formErr.company) ? 'error' : ' ' }
-            onChange = { (e) => { this.updateInputs(e.target.value, f.company) } } 
+            onChange = { (e) => { this.updateForm(e.target.value, f.company) } } 
             onBlur = { () => { this.validateForm(f.company) } }
           />
           { errorCite(CS.errCompanyEmpty, this.formErr.company) }
@@ -237,7 +237,7 @@ export default class templateContact {
             disabled = { this.sendStat }
             value = { this.forms.message } 
             className = { (this.formErr.message) ? 'error' : ' ' }
-            onChange = { (e) => { this.updateInputs(e.target.value, f.message) } } 
+            onChange = { (e) => { this.updateForm(e.target.value, f.message) } } 
             onBlur = { () => { this.validateForm(f.message) } }
           />
           { errorCite(CS.errMessageEmpty, this.formErr.message) }
@@ -277,7 +277,7 @@ export default class templateContact {
     return (<>
       { navigation(this.scroll, 3) }
       { this.landing() }
-      { this.mainContact() }
+      { this.renderContact() }
       { footer() }
     </>)
   }
