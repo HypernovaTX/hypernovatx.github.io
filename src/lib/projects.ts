@@ -1,99 +1,109 @@
 export const projectListClient = [
   {
-    title: 'JJ Pools & Patios',
-    meta: 'fe-jjpool',
-    type: 'Front End',
-    life: 'Mar 2021 - Jun 2021',
-    image: require('../resources/img/proj/jjpool.jpg'),
-    tools: ['TypeScript', 'React', 'PHP', 'JavaScript'],
-    client: 'JJ Industries LLC',
-    description: 'This is a simple React website I\'ve built for a pool cleaning company. I have crafted the design of this website completely by myself as per the client\'s request.\r\n \r\nThe website has a relatively simple structure, the main component assembles the templates together. Each section of the website is separated as a function so it would be easier to update if I need to go back and update. I also created a separate component for the contact form because it handles form data, process data, and sending requests to the emailer PHP file which is a mini API to send emails from the contact form.',
+    title: "JJ Pools & Patios",
+    meta: "fe-jjpool",
+    type: "Front End",
+    life: "Mar 2021 - Jun 2021",
+    image: require("../resources/img/proj/jjpool.jpg"),
+    tools: ["TypeScript", "React", "PHP", "JavaScript"],
+    client: "JJ Industries LLC",
+    description:
+      "This is a simple React website I've built for a pool cleaning company. I have crafted the design of this website completely by myself as per the client's request.\r\n \r\nThe website has a relatively simple structure, the main component assembles the templates together. Each section of the website is separated as a function so it would be easier to update if I need to go back and update. I also created a separate component for the contact form because it handles form data, process data, and sending requests to the emailer PHP file which is a mini API to send emails from the contact form.\r\n \r\nUpdate 2023: this company is no longer in business. I recreated a demo site to showcase my portfolio with the business owner's permission.",
     learned: [
-      'Improved code organization',
-      'A bit of SVG manipulation',
-      'PHP emailer',
+      "Improved code organization",
+      "A bit of SVG manipulation",
+      "PHP emailer",
     ],
     url: [
-      { name: 'Live Site', link: 'https://jjpoolsnpatios.com/' },
-      { name: 'Source', link: 'https://github.com/HypernovaTX/JJPoolsNPatios' },
-    ]
+      { name: "Demo Site", link: "https://jj-pools-n-patios.vercel.app/" },
+      { name: "Source", link: "https://github.com/HypernovaTX/JJPoolsNPatios" },
+    ],
   },
   {
-    title: 'DFW Mobile Repair',
-    meta: 'fs-dfwmr',
-    type: 'Full Stack',
-    life: 'Oct 2020 - Feb 2021',
-    image: require('../resources/img/proj/dfwmr.jpg'),
-    tools: ['TypeScript', 'React', 'PHP', 'MySQL', 'JavaScript'],
-    client: 'Hamm (Houmod)',
-    description: 'This the first complex website I\'ve built for a client. This has allowed me to excercise my knowledge on full stack development. The website allows customers to input their vehicle specs and look up the quotes. The admins can access the admin dashboard to view/edit vehicle quotes and users\' accounts.\r\n \r\nThe front end has a router that defines each of the pages, each page is an entire component in exception of the admin dashboard where there it also calls (via Axios) an addition component that works as a quote editor popup window. Some component calls (Axios) to the backend to process the data.\r\n \r\nThe PHP backend (private due to security concerns) are separated by 2 classes: "user" for login and user editing and "quote" for viewing and editing. Both of the classes calls to the SQL class which is a very basic ORM I wrote. When sending response, most of the data are sent as JSON.',
+    title: "DFW Mobile Repair",
+    meta: "fs-dfwmr",
+    type: "Full Stack",
+    life: "Oct 2020 - Feb 2021",
+    image: require("../resources/img/proj/dfwmr.jpg"),
+    tools: ["TypeScript", "React", "PHP", "MySQL", "JavaScript"],
+    client: "Hamm (Houmod)",
+    description:
+      'This the first complex website I\'ve built for a client. This has allowed me to excercise my knowledge on full stack development. The website allows customers to input their vehicle specs and look up the quotes. The admins can access the admin dashboard to view/edit vehicle quotes and users\' accounts.\r\n \r\nThe front end has a router that defines each of the pages, each page is an entire component in exception of the admin dashboard where there it also calls (via Axios) an addition component that works as a quote editor popup window. Some component calls (Axios) to the backend to process the data.\r\n \r\nThe PHP backend (private due to security concerns) are separated by 2 classes: "user" for login and user editing and "quote" for viewing and editing. Both of the classes calls to the SQL class which is a very basic ORM I wrote. When sending response, most of the data are sent as JSON.',
     learned: [
-      'Some understanding of development lifecycle',
-      'Understanding of user registration/login systems',
-      'Dealing with more complex API requests using Axios',
-      'Dealing with more complex data structures',
-      'Better understanding of OOP in PHP'
+      "Some understanding of development lifecycle",
+      "Understanding of user registration/login systems",
+      "Dealing with more complex API requests using Axios",
+      "Dealing with more complex data structures",
+      "Better understanding of OOP in PHP",
     ],
     url: [
-      { name: 'Live Site', link: 'https://dfwmobilerepair.com/' },
-      { name: 'Source (front end only)', link: 'https://github.com/HypernovaTX/DFWMobileRepair' },
-    ]
+      { name: "Live Site", link: "https://dfwmobilerepair.com/" },
+      {
+        name: "Source (front end only)",
+        link: "https://github.com/HypernovaTX/DFWMobileRepair",
+      },
+    ],
   },
   {
-    title: 'MFGG.net',
-    meta: 'fs-mfgg',
-    type: 'Full Stack',
-    life: 'Jan 2019 - Oct 2019',
-    image: require('../resources/img/proj/mfgg.jpg'),
-    tools: ['PHP', 'MySQL', 'JavaScript'],
-    client: 'MFGG Staff',
-    description: 'MFGG is an old game development community founded in 2001. The software that the site utilizes was written in 2006 with PHP 5.2. I fixed some of the site\'s bugs, patched a security hole, and added more features to a legacy codebase.\r\n \r\nThe biggest accomplishment is to add a "Favorite System" where users can save submissions as favorites to their account. The software has different kind of components where I can call to several classes like "user", "db", "modules". I created a new MySQL database table then added new functions to call to the new SQL database. Then added more functions to modules and user components and templates to call to these functions. In the end, the feature is fully operational and users have not found any bugs in it even after a year.',
+    title: "MFGG.net",
+    meta: "fs-mfgg",
+    type: "Full Stack",
+    life: "Jan 2019 - Oct 2019",
+    image: require("../resources/img/proj/mfgg.jpg"),
+    tools: ["PHP", "MySQL", "JavaScript"],
+    client: "MFGG Staff",
+    description:
+      'MFGG is an old game development community founded in 2001. The software that the site utilizes was written in 2006 with PHP 5.2. I fixed some of the site\'s bugs, patched a security hole, and added more features to a legacy codebase.\r\n \r\nThe biggest accomplishment is to add a "Favorite System" where users can save submissions as favorites to their account. The software has different kind of components where I can call to several classes like "user", "db", "modules". I created a new MySQL database table then added new functions to call to the new SQL database. Then added more functions to modules and user components and templates to call to these functions. In the end, the feature is fully operational and users have not found any bugs in it even after a year.',
     learned: [
-      'An understanding of working with a legacy codebase',
-      'Preventive measures for security vulnerabilities like SQL injection',
-      'The differences of various of SQL joins',
-      'How to handle a large database',
+      "An understanding of working with a legacy codebase",
+      "Preventive measures for security vulnerabilities like SQL injection",
+      "The differences of various of SQL joins",
+      "How to handle a large database",
     ],
     url: [
-      { name: 'Live Site', link: 'https://mfgg.net' },
-      { name: 'Source (incomplete)', link: 'https://drive.google.com/file/d/1gSTJfM8KnSeYsZ4660EoDFMlx3rPvCyr/view?usp=sharing' },
-    ]
+      { name: "Live Site", link: "https://mfgg.net" },
+      {
+        name: "Source (incomplete)",
+        link: "https://drive.google.com/file/d/1gSTJfM8KnSeYsZ4660EoDFMlx3rPvCyr/view?usp=sharing",
+      },
+    ],
   },
   {
-    title: 'Removu',
-    meta: 'fe-removu',
-    type: 'Front End',
-    life: 'Apr 2018 - Mar 2019',
-    image: require('../resources/img/proj/removu.jpg'),
-    tools: ['WordPress', 'PHP', 'JavaScript'],
-    client: 'Removu America Inc',
-    description: 'Removu is a Korean-based camera company. Their website is built on WordPress and is hosted on an Ubuntu-based AWS server. I have helped the company by maintaing the site and redesigning its UI.\n\nThe website is ran on WordPress, I started removing any unnecessary plugins/assets from the site, compressed the images, and reduced some JavaScript to optimize the load. I then build each section of the home page based on a lander plugin the company purchased and used JavaScript to update the background\'s y position based on the scroll for the parallax effect. The marketing team requested me to use a video as the background of the header, I compressed the video as much as possible for the first header.',
+    title: "Removu",
+    meta: "fe-removu",
+    type: "Front End",
+    life: "Apr 2018 - Mar 2019",
+    image: require("../resources/img/proj/removu.jpg"),
+    tools: ["WordPress", "PHP", "JavaScript"],
+    client: "Removu America Inc",
+    description:
+      "Removu is a Korean-based camera company. Their website is built on WordPress and is hosted on an Ubuntu-based AWS server. I have helped the company by maintaing the site and redesigning its UI.\n\nThe website is ran on WordPress, I started removing any unnecessary plugins/assets from the site, compressed the images, and reduced some JavaScript to optimize the load. I then build each section of the home page based on a lander plugin the company purchased and used JavaScript to update the background's y position based on the scroll for the parallax effect. The marketing team requested me to use a video as the background of the header, I compressed the video as much as possible for the first header.",
     learned: [
-      'Optimization of WordPress plugins',
-      'Some knowledge on JavaScript',
-      'WordPress theme modification',
+      "Optimization of WordPress plugins",
+      "Some knowledge on JavaScript",
+      "WordPress theme modification",
     ],
-    url: [
-      { name: 'Archived Site', link: 'https://removu.com/' },    ]
+    url: [{ name: "Archived Site", link: "https://removu.com/" }],
   },
   {
-    title: 'The Green Room Billiards',
-    meta: 'fe-greenroom',
-    type: 'Front End',
-    life: 'May 2017 - Jun 2017',
-    image: require('../resources/img/proj/tgrb.jpg'),
-    tools: ['WordPress', 'PHP'],
-    client: 'Larry Hill',
-    description: 'I got a client from Billings MT that asked me to design a very simple website for his company. I was able to do this in a very short period of time.\r\n \r\nThis website is built straight off from WordPress with a theme called "Best". The style is too simple so I restructured the site and removed any unnecessary elements using plain CSS. I also modified some PHP codes to remove/edit some elemnts a little bit.',
-    learned: [
-      'How to finish a project in a short amount of time'
-    ],
+    title: "The Green Room Billiards",
+    meta: "fe-greenroom",
+    type: "Front End",
+    life: "May 2017 - Jun 2017",
+    image: require("../resources/img/proj/tgrb.jpg"),
+    tools: ["WordPress", "PHP"],
+    client: "Larry Hill",
+    description:
+      'I got a client from Billings MT that asked me to design a very simple website for his company. I was able to do this in a very short period of time.\r\n \r\nThis website is built straight off from WordPress with a theme called "Best". The style is too simple so I restructured the site and removed any unnecessary elements using plain CSS. I also modified some PHP codes to remove/edit some elemnts a little bit.',
+    learned: ["How to finish a project in a short amount of time"],
     url: [
-      { name: 'Reupload', link: 'http://greenroom.byethost8.com/' },    
-      { name: 'Source', link: 'https://drive.google.com/file/d/1w9qGQiiTSWYTTe5PgU__vln0OQCXFoQi/view?usp=sharing' }
-    ]
+      { name: "Reupload", link: "http://greenroom.byethost8.com/" },
+      {
+        name: "Source",
+        link: "https://drive.google.com/file/d/1w9qGQiiTSWYTTe5PgU__vln0OQCXFoQi/view?usp=sharing",
+      },
+    ],
   },
-  
 ];
 
 export const projectListPersonal = [
